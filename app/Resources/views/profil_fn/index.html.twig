@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Profil_fns list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id_pfn</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for profil_FN in profil_FNs %}
+            <tr>
+                <td><a href="{{ path('profilfn_show', { 'id': profil_FN.idPFN }) }}">{{ profil_FN.idPFN }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('profilfn_show', { 'id': profil_FN.idPFN }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('profilfn_edit', { 'id': profil_FN.idPFN }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('profilfn_new') }}">Create a new profil_FN</a>
+        </li>
+    </ul>
+{% endblock %}

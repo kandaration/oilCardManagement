@@ -1,0 +1,18 @@
+reporting:
+    resource: "@ReportingBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gestion_transaction:
+    resource: "@GestionTransactionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gestion_carte:
+    resource: "@GestionCarteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gestion_acces:
+    resource: "@GestionAccesBundle/Resources/config/routing.yml"
+    prefix:   /
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

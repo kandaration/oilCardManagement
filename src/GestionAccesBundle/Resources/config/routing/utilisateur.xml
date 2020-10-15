@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+
+    <route id="utilisateur_index" path="/" methods="GET">
+        <default key="_controller">GestionAccesBundle:Utilisateur:index</default>
+    </route>
+
+
+
+    <route id="utilisateur_cnx" path="/cnx" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Utilisateur:cnx</default>
+    </route>
+    <route id="utilisateur_disconnect" path="/disconnect" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Utilisateur:deconnexion</default>
+    </route>
+
+    <route id="utilisateur_show" path="/{id}/show" methods="GET">
+        <default key="_controller">GestionAccesBundle:Utilisateur:show</default>
+    </route>
+
+    <route id="utilisateur_newP" path="/newp" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Utilisateur:newP</default>
+    </route>
+
+    <route id="utilisateur_newC" path="/newc" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Utilisateur:newC</default>
+    </route>
+
+    <route id="utilisateur_newG" path="/newg" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Utilisateur:newG</default>
+    </route>
+
+    <route id="utilisateur_edit" path="/{id}/edit" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Utilisateur:edit</default>
+    </route>
+
+    <route id="utilisateur_delete" path="/{id}/delete" methods="GET">
+        <default key="_controller">GestionAccesBundle:Utilisateur:delete</default>
+    </route>
+
+</routes>

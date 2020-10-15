@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="profilfn_index" path="/" methods="GET">
+        <default key="_controller">GestionAccesBundle:Profil_FN:index</default>
+    </route>
+
+
+    <route id="profilfn_all" path="/affect" methods="POST">
+        <default key="_controller">GestionAccesBundle:Profil_FN:affect</default>
+    </route>
+
+    <route id="profilfn_show" path="/{id}/show" methods="GET">
+        <default key="_controller">GestionAccesBundle:Profil_FN:show</default>
+    </route>
+
+    <route id="profilfn_new" path="/new" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Profil_FN:new</default>
+    </route>
+
+    <route id="profilfn_edit" path="/{id}/edit" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Profil_FN:edit</default>
+    </route>
+
+    <route id="profilfn_delete" path="/{id}/delete" methods="DELETE">
+        <default key="_controller">GestionAccesBundle:Profil_FN:delete</default>
+    </route>
+
+</routes>

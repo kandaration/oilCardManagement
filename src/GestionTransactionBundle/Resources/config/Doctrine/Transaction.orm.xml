@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionTransactionBundle\Entity\Transaction" repository-class="GestionTransactionBundle\Repository\TransactionRepository">
+        <id name="id_transaction" type="integer"  column="id_transaction">
+
+        </id>
+
+        <field name="num_ticket" column="num_ticket" type="string" length="250" />
+        <field name="produit" column="produit" type="string" length="250" nullable="true" />
+        <field name="volume" column="volume" type="string" length="250" nullable="true" />
+        <field name="date" column="date" type="date"  />
+        <field name="heure" column="heure" type="time"  />
+        <field name="montant" column="montant" type="float"  />
+        <field name="solde" column="solde" type="float"  />
+
+
+
+        <many-to-one
+                field="carte"
+                target-entity="GestionCarteBundle\Entity\Carte"
+                inversed-by="transactions"
+        >
+
+            <join-column name="num_carte" referenced-column-name="num_carte" />
+        </many-to-one>
+
+        <many-to-one
+                field="tpe"
+                target-entity="GestionTransactionBundle\Entity\TPE"
+                inversed-by="transactions"
+        >
+
+            <join-column name="id_TPE" referenced-column-name="id_TPE" />
+        </many-to-one>
+
+        <many-to-one
+                field="terminal"
+                target-entity="GestionTransactionBundle\Entity\Terminal"
+                inversed-by="transactions"
+        >
+
+            <join-column name="id_terminal" referenced-column-name="id_terminal" />
+        </many-to-one>
+
+        <many-to-one
+                field="station"
+                target-entity="GestionCarteBundle\Entity\Station"
+                inversed-by="transactions"
+        >
+
+            <join-column name="id_station" referenced-column-name="id_station" />
+        </many-to-one>
+
+        <many-to-one
+                field="client"
+                target-entity="GestionCarteBundle\Entity\Client"
+                inversed-by="transactions"
+        >
+
+            <join-column name="id_client" referenced-column-name="id_client" />
+        </many-to-one>
+
+        <many-to-one
+                field="type"
+                target-entity="GestionTransactionBundle\Entity\Type_Transaction"
+                inversed-by="transactions"
+        >
+
+            <join-column name="id_Type_Transaction" referenced-column-name="id_Type_Transaction" />
+        </many-to-one>
+
+    </entity>
+
+</doctrine-mapping>

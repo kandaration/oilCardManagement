@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionAccesBundle\Entity\Profil_FN" repository-class="GestionAccesBundle\Repository\Profil_FNRepository">
+        <id name="id_PFN" type="integer" column="id_PFN">
+            <generator strategy="AUTO"/>
+        </id>
+        <many-to-one
+                field="profil_fn"
+                target-entity="GestionAccesBundle\Entity\Profil"
+                inversed-by="functions"
+        >
+
+            <join-column name="id_Profil" referenced-column-name="id_Profil" />
+        </many-to-one>
+
+        <many-to-one
+                field="fn"
+                target-entity="GestionAccesBundle\Entity\Fonctionalite"
+                inversed-by="functions"
+        >
+
+            <join-column name="id_FN" referenced-column-name="id_FN" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

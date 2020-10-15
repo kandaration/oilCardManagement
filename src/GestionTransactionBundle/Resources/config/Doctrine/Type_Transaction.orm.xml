@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionTransactionBundle\Entity\Type_Transaction" repository-class="GestionTransactionBundle\Repository\Type_TransactionRepository">
+        <id name="id_Type_Transaction" type="integer"  column="id_Type_Transaction">
+
+        </id>
+
+        <field name="designiation" column="designation" type="string" length="250" />
+        <field name="abreviation" column="abreviation" type="string" length="250"  />
+
+
+
+
+
+
+        <one-to-many
+                field="transactions"
+                target-entity="GestionTransactionBundle\Entity\Transaction"
+                mapped-by="type" />
+
+
+    </entity>
+
+</doctrine-mapping>

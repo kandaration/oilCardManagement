@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionAccesBundle\Entity\Utilisateur" repository-class="GestionAccesBundle\Repository\UtilisateurRepository">
+
+        <id name="id_Utilisateur" type="integer" column="id_Utilisateur">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="login" column="login" type="string" length="50" nullable="false" unique="true" />
+        <field name="mot_passe" column="mot_passe" type="string" length="50" nullable="false"  />
+        <field name="nom" column="nom" type="string" length="50" nullable="true"  />
+        <field name="prenom" column="prenom" type="string" length="50" nullable="true"  />
+        <field name="Date_Naissance" column="Date_Naissance" type="datetime"  nullable="true"  />
+        <field name="email" column="email" type="string" length="100" nullable="false"  />
+        <field name="tel" column="tel" type="string" length="20" nullable="true"  />
+        <field name="type" column="type" type="integer" nullable="true"  />
+
+        <one-to-one
+                field="carte"
+                target-entity="GestionCarteBundle\Entity\Carte"
+                inversed-by="usercarte" >
+            <join-column name= "num_carte" referenced-column-name= "num_carte" />
+        </one-to-one>
+
+        <one-to-one
+                field="compte_clt"
+                target-entity="GestionCarteBundle\Entity\Client"
+                inversed-by="compte_carte_clt" >
+            <join-column name= "id_client" referenced-column-name= "id_client" />
+        </one-to-one>
+
+        <one-to-one
+                field="compte_gerant"
+                target-entity="GestionCarteBundle\Entity\Gerant"
+                inversed-by="compte_carte_gerant" >
+            <join-column name= "id_gerant" referenced-column-name= "id_gerant" />
+        </one-to-one>
+
+        <one-to-many
+                field="Roles"
+                target-entity="GestionAccesBundle\Entity\ProfilUtilisateur"
+                mapped-by="utilisateur" />
+
+
+
+
+    </entity>
+</doctrine-mapping>

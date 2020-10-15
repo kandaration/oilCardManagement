@@ -1,0 +1,105 @@
+
+
+
+
+{% block sidebar %}
+
+
+
+
+
+
+    <aside id="sidebar-left" class="sidebar-left">
+
+        <div class="sidebar-header">
+            <div class="sidebar-title">
+                Navigation
+            </div>
+            <div class="sidebar-toggle hidden-xs" style="left: 60px;" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                <i class="fa fa-bars"  aria-label="Toggle sidebar" ></i>
+            </div>
+        </div>
+
+        <div class="nano">
+            <div class="nano-content">
+                <nav id="menu" class="nav-main" role="navigation">
+
+                    <ul class="nav nav-main">
+
+
+                        {%  set ch="" %}
+                        {% set menu=0 %}
+                        {% for f in functions  %}
+
+
+                        {% set fnom=f.nomFN|split('-') %}
+
+                        {% if (fnom|length>1)  %}
+
+                        {% if(ch!=fnom[0]) %}
+                        {% if(menu==2) %}
+
+                    </ul>
+                    </li>
+                    {% endif %}
+                    <li class="nav-parent">
+                        <a>
+                            <i class="fa {{ f.icon }}" aria-hidden="true"></i>
+                            <span>{{fnom[0] }}</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a href="">
+                                    {{fnom[1] }}
+                                </a>
+                            </li>
+
+
+                            {%  set menu=2 %}
+
+
+                            {% endif %}
+
+                            {% if (ch==fnom[0]) %}
+
+
+
+                                <li>
+                                    <a href='{{path(f.routeid)}}'>
+                                        {{ fnom[1] }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {%  set ch=fnom[0] %}
+                            {%  set menu=2 %}
+                            {% else  %}
+
+                            {% if(menu==2) %}
+
+                        </ul>
+                    </li>
+                    {% endif %}
+
+                    <li>
+                        <a href='{{path(f.routeid)}}'>
+                            <i class="fa {{ f.icon }}" aria-hidden="true"></i>
+                            <span>{{ f.nomFN }}</span>
+                        </a>
+                    </li>
+                    {% set menu=0 %}
+                    {% endif %}
+
+                    {% endfor %}
+
+                    {% if menu==2  %}
+
+                        </ul>
+                        </li>
+                    {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </aside>
+
+{% endblock sidebar %}

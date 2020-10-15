@@ -1,0 +1,1028 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Menu Collapsed Layout | Okler Themes | Porto-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template"/>
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/bootstrap/css/bootstrap.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/font-awesome/css/font-awesome.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/magnific-popup/magnific-popup.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/bootstrap-datepicker/css/datepicker3.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/morris/morris.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/pnotify/pnotify.custom.css") }}'/>
+
+
+    <!-- ThemeCSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/theme.css") }}'/>
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/skins/default.css") }}'/>
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/theme-custom.css") }}'/>
+
+    <!-- Head Libs -->
+    <script src='{{ asset("Tamplate/vendor/modernizr/modernizr.js") }}'></script>
+
+    <style>
+        font.police {
+            size: 3vw;
+        }
+
+        font.montant {
+            size: 5vw;
+            color: #ff7f50;
+        }
+
+        .simple-user-list {
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        /* button, input {
+             margin: 2%;
+         }*/
+
+
+    </style>
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../" class="logo">
+                <img src={{ asset("Tamplate/images/carte-carburant.jpg") }} height="100" alt="Porto Admin"
+                     style="margin-left: -15px;margin-top: -25px;"/>
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+                 data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div ><h2><B>Protail</B> <em>Gestion Cartes Pétrolières</em></h2></div>
+
+        <!-- start: search & user box -->
+        <div class="header-right" style="margin-top: -65px;">
+
+
+            <span class="separator"></span>
+            {{ block("userbox","::userbox.html.twig") }}
+
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        {{ block("sidebar","::menu.html.twig") }}
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2 style="margin-left: 40px;">Profil</h2>
+
+
+            </header>
+
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-4 col-lg-3">
+
+                    <section class="panel">
+                        <div class="panel-body">
+
+                            <div class="thumb-info mb-md"
+                                 style="height:200px;border-left-width: 52px;margin-left: 50px;">
+                                {% if type==0 %}
+                                    <img src={{ asset("Tamplate/images/client.jpg") }} class="rounded
+                                         img-responsive" style="height:200px">
+                                    <div class="thumb-info-title">
+                                        <span class="thumb-info-inner">{{ clt.designation }}</span>
+                                        <span class="thumb-info-type">{{ clt.adress }}</span>
+                                    </div>
+                                {% else %}
+                                    <img src={{ asset("Tamplate/images/porteur.jpg") }} class="rounded
+                                         img-responsive" style="height:200px">
+                                    <div class="thumb-info-title">
+                                        <span class="thumb-info-inner">{{ profil.nom }}</span>
+                                        <span class="thumb-info-type">{{ profil.prenom }}</span>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="widget-toggle-expand mb-md">
+                                <div class="widget-header">
+                                    <h6>Profile Completion</h6>
+                                    <div class="widget-toggle">+</div>
+                                </div>
+                                <div class="widget-content-expanded">
+                                    <ul class="simple-todo-list">
+                                        {% if profil.type==0 %}
+                                            <li>Date de fondation: {{ profil.Date_Naissance|date('d/m/Y') }}</li>
+                                        {% else %}
+                                            <li>Date de naissance: {{ profil.Date_Naissance|date('d/m/Y') }}</li>
+                                        {% endif %}
+                                        <li>N°Tel: {{ profil.tel }}</li>
+                                        <li>E-mail: {{ profil.email }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+
+
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+
+                            <h2 class="panel-title">
+
+                                <span class="label label-primary label-sm text-normal va-middle mr-sm">{{ nbr_carte }}</span>
+                                <span class="va-middle">Cartes</span>
+                            </h2>
+                        </header>
+                        <div class="panel-body">
+                            <div class="content">
+                                <ul class="simple-user-list">
+                                    <div class="no-matching center-text text-center"> no result matching</div>
+
+                                    {% for carte in cartes %}
+                                        <li id="{{ carte.numCarte }}" class="card" style=" height:55px;">
+                                            <div class="col-md-9">
+                                                <figure class="image rounded">
+                                                    <img src={{ asset("Tamplate/images/icon_cartes.png") }}  class="img-circle">
+                                                </figure>
+                                                <span class="title"
+                                                      id="carte-info{{ carte.numCarte }}">{{ carte.nom_porteur }} {{ carte.prenom_porteur }}</span>
+                                                <span class="message truncate"
+                                                      id="carte-etat{{ carte.numCarte }}">{{ carte.etat }}</span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <a class="mb-xs mt-xs mr-xs modal-basic btn btn-danger"
+                                                   href="#modalHeaderColorDanger" id="bt{{ carte.numCarte }}"
+                                                   style="padding-top:2px;padding-right:8px;padding-bottom:2px;padding-left:8px;visibility:hidden;"><i
+                                                            class="fa  fa-ban"></i></a>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+
+
+                                </ul>
+                                <div id="modalHeaderColorDanger"
+                                     class="modal-block modal-header-color modal-block-danger mfp-hide">
+                                    <section class="panel">
+                                        <header class="panel-heading">
+                                            <h2 class="panel-title">Désactivation carte</h2>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div class="modal-wrapper">
+                                                <div class="modal-icon">
+                                                    <i class="fa fa-times-circle"></i>
+                                                </div>
+                                                <div class="modal-text">
+                                                    <h4 id="block-title"></h4>
+                                                    <pi id="block-details" style="font-weight: bold"></pi>
+                                                    <Pi style="color:red;font-size:0.7vw"><br>Attention! Une fois la carte est désactivé vous devez conacter le siège pour la réactiver</Pi>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <footer class="panel-footer">
+                                            <div class="row">
+                                                <div class="col-md-12 text-right">
+                                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                                    <button class="btn btn-danger modal-dismiss" value=""
+                                                            id="block-confim">OK
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="input-group input-search">
+                                <input type="text" class="form-control" name="find-cards" id="find-cards"
+                                       placeholder="Search...">
+                                <span class="input-group-btn">
+											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
+											</button>
+										</span>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+                <div class="col-md-8 col-lg-6">
+
+                    <div class="tabs">
+                        <ul class="nav nav-tabs tabs-primary">
+                            <li class="active">
+                                <a href="#overview" data-toggle="tab">Vue d'ensemble</a>
+                            </li>
+                            {% if type==2 %}
+                                <li>
+                                    <a href="#trsfrt_solde" data-toggle="tab">Transfert solde</a>
+                                </li>
+                            {% endif %}
+
+
+                        </ul>
+                        <div class="tab-content">
+
+                        <div id="overview" class="tab-pane active">
+                            <div class="row loading">
+                                <img src="{{ asset("Tamplate/images/load shift.gif") }}"
+                                     style="height:600px; display: block;margin: 0 auto;">
+                            </div>
+                            <div  class="tab-pane active tmline">
+                                <h4 class="mb-xlg">Timeline</h4>
+
+                                <div class="timeline timeline-simple mt-xlg mb-md">
+                                    <div class="tm-body" id="timelinebody">
+
+                                    </div>
+                                </div>
+                                <form id="xxx" name="xxx" action="{{ path('transaction_index') }}" method="POST">
+
+                                    <div class="col-md-7">
+                                        <input type="hidden" name="id" id="id" value={{ carte_principal.numCarte }}>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <a class="text-uppercase text-muted voirplus">(Voir Plus)</a>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                            {% if type==2 %}
+                            <div id="trsfrt_solde" class="tab-pane">
+                                <div  class="tab-pane active">
+
+                                    <form class="form-horizontal" id="trsfrt_form" name="trsfrt_form"
+                                          method="POST">
+                                        <div class="row form-group">
+                                            <label class="col-md-4 control-label"><B>Numéro carte bénéficiaire:</B></label>
+                                            <div class="col-md-6">
+                                                <input type="text"
+                                                       class="form-control input-rounded positive-integer required"
+                                                       id="num_carteb" name="num_carteb">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <label class="col-md-4 control-label"><B>Montant:</B></label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control input-rounded positive required"
+                                                       id="montant" name="montant">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label"><B>Code DAB/TPE</B> </label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+													<span class="input-group-addon input-rounded ">
+														<i class="fa fa-lock"></i>
+													</span>
+                                                    <input type="password" name="codeDAB" id="CodeDAB"
+                                                           class="form-control  input-rounded positive" required/>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-9"></div>
+                                            <div class="col-md-3">
+                                                <button type="submit"
+                                                        class="mb-xs mt-xs mr-xs  btn btn-info">Transfert
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div id="modal_trsfrt" class="modal fade" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title">Transfert Solde!</h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="modal-wrapper">
+                                                        <div class="modal-icon">
+                                                            <i class="fa fa-question-circle" style="color:#8283c3;"></i>
+                                                        </div>
+                                                        <div class="modal-text">
+                                                            <h4 id="trsfrt_info"></h4>
+                                                            <p id="trsfrt_detlais"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="mt-sm mb-sm btn btn-default" data-dismiss="modal" id="btannuller">Annuler</button>
+                                                    <button type="button" class="mt-sm mb-sm btn btn-primary" data-dismiss="modal" id="trsfrt_confirm">OK</button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-3">
+
+                    <h4 class="mb-md">Carte Statistiques</h4>
+                    <div class="row load-mini">
+                        <img src="{{ asset("Tamplate/images/load-mini-stat.gif") }}"
+                             style="height:250px; display: block;margin: 0 auto;">
+                    </div>
+                    <ul class="simple-card-list mb-xlg mini-stat">
+                        <li class="primary">
+                            <h3 id="solde"></h3>
+                            <p>Solde actuelle</p>
+                        </li>
+                        <li class="primary" style="height:130px">
+                            <div class="col-md-5">
+                                <h3 id="plafond"></h3>
+                                <p>Plafond</p>
+                            </div>
+
+                            <div id="meterParent" class="liquid-meter col-md-5" style="height:120px">
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+</section>
+
+
+
+<div id="dialog" class="modal-block mfp-hide">
+    <section class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-title">Are you sure?</h2>
+        </header>
+        <div class="panel-body">
+            <div class="modal-wrapper">
+                <div class="modal-text">
+                    <p>Are you sure that you want to delete this row?</p>
+                </div>
+            </div>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button id="dialogConfirm" class="btn btn-primary">Confirm</button>
+                    <button id="dialogCancel" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+
+<!-- Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery/jquery.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js") }}></script>
+<script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js") }}></script>
+<script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js") }}></script>
+<script src={{ asset("Tamplate/vendor/snap-svg/snap.svg.js") }}></script>
+<script src={{ asset("Tamplate/vendor/liquid-meter/liquid.meter.js") }}></script>
+
+
+<!-- Specific Page Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery-autosize/jquery.autosize.js") }}></script>
+<script src={{ asset("Tamplate/vendor/pnotify/pnotify.custom.js") }}></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src={{ asset("Tamplate/javascripts/theme.js") }}></script>
+
+<!-- Theme Custom -->
+<script src={{ asset("Tamplate/javascripts/theme.custom.js") }}></script>
+
+<!-- Theme Initialization Files -->
+<script src={{ asset("Tamplate/javascripts/theme.init.js") }}></script>
+<script src={{ asset("Tamplate/javascripts/ui-elements/examples.modals.js") }}></script>
+<script src={{ asset("Tamplate/javascripts/jquery.numeric.js") }}></script>
+<script src={{ asset("Tamplate/vendor/fullcalendar/lib/moment.min.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-validation/jquery.validate.js") }}></script>
+<script src={{ asset("Tamplate/javascripts/ui-elements/examples.notifications.js") }}></script>
+
+<script>
+
+
+    function Trshift(num_carte) {
+        $.ajax({
+            type: "POST",
+            url: "{{ path('gestion_carte_trshift') }}",
+            cache: false,
+            data: {num_carte: num_carte},
+            success: function (rep) {
+                var mois = "";
+                $('#timelinebody').empty();
+                var timelinebody = document.getElementById('timelinebody');
+                console.log(rep);
+                $(".loading").hide();
+                $(".tmline").show();
+
+
+                var ol;
+
+                $.each(JSON.parse(rep), function (i, item) {
+
+                    if ((mois != moment(item.date.date).format('MMMM'))) {
+
+                        ol = document.createElement('ol');
+                        ol.className = "tm-items";
+                        ol.innerHTML = "";
+
+
+                        var title = document.createElement('div');
+                        title.className = "tm-title";
+                        var text = document.createElement('h3');
+                        text.className = "h5 text-uppercase";
+                        text.innerHTML = moment(item.date.date).format('MMMM YYYY');
+                        title.append(text);
+                        timelinebody.append(title);
+                        timelinebody.append(ol);
+
+
+                        mois = moment(item.date.date).format('MMMM');
+
+
+                    }
+                    if (((mois == moment(item.date.date).format('MMMM')))) {
+
+
+                        var tr = document.createElement('li');
+                        var divtr = document.createElement('div');
+                        divtr.className = "tm-box";
+
+
+                        var row1 = document.createElement('div');
+                        row1.className = "row";
+                        var col1 = document.createElement('div');
+                        col1.className = "col-md-4";
+                        var num_carte = document.createElement('font');
+                        num_carte.className = "police";
+                        num_carte.innerHTML = "Date:" + item.date.date.substring(0, 10);
+                        col1.append(num_carte);
+                        row1.append(col1);
+
+                        var col2 = document.createElement('div');
+                        col2.className = "col-md-5";
+                        var solde_carte = document.createElement('font');
+                        solde_carte.className = "police";
+                        solde_carte.innerHTML = "Solde carte après tansaction:" + item.solde;
+                        col2.append(solde_carte);
+                        row1.append(col2);
+
+                        var col3 = document.createElement('div');
+                        col3.className = "col-md-3";
+                        var montant_carte = document.createElement('font');
+                        montant_carte.className = "montant";
+                        montant_carte.innerHTML = "montant:" + item.montant + "DT" + '<br>' + item.type.designiation;
+                        col3.append(montant_carte);
+                        row1.append(col3);
+
+                        divtr.append(row1);
+
+                        var row2 = document.createElement('div');
+                        row2.className = "row";
+
+                        var col4 = document.createElement('div');
+                        col4.className = "col-md-4";
+                        var adress = document.createElement('font');
+                        adress.className = "police";
+                        adress.innerHTML = "adress:" + item.station.adress;
+                        col4.append(adress);
+                        row2.append(col4);
+
+                        var col5 = document.createElement('div');
+                        col5.className = "col-md-4";
+                        var tel = document.createElement('font');
+                        tel.className = "police";
+                        tel.innerHTML = "Fax/Tel:" + item.station.fax;
+                        col5.append(tel);
+                        row2.append(col5);
+                        var col6 = document.createElement('div');
+                        col6.className = "col-md-4";
+                        var heur = document.createElement('font');
+                        heur.className = "police";
+                        heur.innerHTML = "heure:" + item.heure.date.substring(11, 19);
+                        col5.append(tel);
+                        row2.append(heur);
+
+                        divtr.append(row2);
+
+                        tr.append(divtr);
+
+                        ol.append(tr);
+
+
+                    }
+
+                });
+
+
+
+
+            }
+        });
+    }
+
+    function CarteStat() {
+        $(".load-mini").show();
+        $(".mini-stat").hide();
+        $.ajax({
+            type: "POST",
+            url: "{{ path('gestion_carte_info') }}",
+            cache: false,
+            data: {num_carte: $("#trsfrt_confirm").val()},
+            success: function (rep) {
+                var solde = rep.solde;
+                var plafond = rep.plafond;
+
+                var pourcentage = (solde * 100) / plafond;
+                $("#meterParent").empty().
+                append($("<meter id='meterSales'></meter>")
+                    .attr("min",0)
+                    .attr("max",100)
+                    .attr("value", pourcentage)
+                );
+
+                $('#meterSales').liquidMeter({
+                    shape: 'circle',
+                    color: '#becc1b',
+                    background: '#F9F9F9',
+                    fontSize: '24px',
+                    fontWeight: '600',
+                    stroke: '#77799c',
+                    textColor: '#333',
+                    liquidOpacity: 0.9,
+                    liquidPalette: ['#c42d29'],
+                    speed: 3000,
+                    animate: !$.browser.mobile
+                });
+                //$('#meterSales tspan').text("ra");
+                $("#solde").html(solde + " DT");
+                $("#plafond").html(plafond + " DT");
+                $(".load-mini").hide();
+                $(".mini-stat").show();
+            }
+        });
+    }
+    function EntrepriseStat() {
+        $(".load-mini").show();
+        $(".mini-stat").hide();
+      var idclt=-1;
+        {% if type==0 %}
+         idclt={{ clt.idClient }};
+
+        {% endif %}
+
+        $.ajax({
+            type: "POST",
+            url: "{{ path('gestion_carte_entrepriseInfo') }}",
+            cache: false,
+            data: {id_clt: idclt},
+            success: function (rep) {
+                var solde = rep.solde;
+                var plafond = rep.plafond;
+
+                var pourcentage = (solde * 100) / plafond;
+                $("#meterParent").empty().
+                append($("<meter id='meterSales'></meter>")
+                    .attr("min",0)
+                    .attr("max",100)
+                    .attr("value", pourcentage)
+                );
+
+                $('#meterSales').liquidMeter({
+                    shape: 'circle',
+                    color: '#becc1b',
+                    background: '#F9F9F9',
+                    fontSize: '24px',
+                    fontWeight: '600',
+                    stroke: '#77799c',
+                    textColor: '#333',
+                    liquidOpacity: 0.9,
+                    liquidPalette: ['#c42d29'],
+                    speed: 3000,
+                    animate: !$.browser.mobile
+                });
+                //$('#meterSales tspan').text("ra");
+                $("#solde").html(solde + " DT");
+                $("#plafond").html(plafond + " DT");
+                $(".load-mini").hide();
+                $(".mini-stat").show();
+            }
+        });
+    }
+
+
+    function select_default_carte() {
+        $(".simple-user-list li").each(function (index, element) {
+
+            if ($(element).id =={{ carte_principal.numCarte }}) {
+                $(element).css('background-color', '#55a2d1cc');
+                $("#bt{{ carte_principal.numCarte }}").css('visibility', 'visible');
+                document.getElementById("block-title").innerHTML = "Voulez vous vraiment désactiver la carte Num: " + $(element).id+"?";
+                document.getElementById("block-details").innerHTML = "qui appartient à " + $("#carte-info" + $(element).id).innerHTML;
+
+            }
+
+
+        });
+
+    }
+
+
+    $(document).ready(function () {
+        // basic
+        $("#trsfrt_form").validate({
+            highlight: function (label) {
+                $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function (label) {
+                $(label).closest('.form-group').removeClass('has-error');
+                label.remove();
+            },
+            errorPlacement: function (error, element) {
+                var placement = element.closest('.input-group');
+                if (!placement.get(0)) {
+                    placement = element;
+                }
+                if (error.text() !== '') {
+                    placement.after(error);
+                }
+            }
+            /* submitHandler: function(form) {
+             //$(form).ajaxSubmit();
+             $(form).defaultPrevented;
+             alert('succes');
+
+             }*/
+
+        });
+
+
+        $("#trsfrt_form").on('submit', function (e) {
+            var isvalidate = $("#trsfrt_form").valid();
+            if (isvalidate) {
+                e.preventDefault();
+                //alert("sdfqsdfqsdf");
+                $('#modal_trsfrt').modal();
+                $('#trsfrt_info').html("Voulez vous vraiment effectué cette transaction?");
+                $('#trsfrt_detlais').html("montant: "+$("#montant").val()+" DT, "+"num carte binificiaire:"+$("#num_carteb").val());
+
+                //$('#modalprimary').modal("show");
+
+            }
+        });
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href");
+            if ((target == '#trsfrt_solde')) {
+                // alert('ok');
+                $(".tmline").hide();
+            } else {
+                $(".tmline").show();
+                //alert('not ok');
+            }
+        });
+
+        $(".positive-integer").numeric({decimal: false, negative: false}, function () {
+            alet("Positive integers only");
+            this.value = "";
+            this.focus();
+        });
+        $(".positive").numeric({negative: false}, function () {
+            alert("No negative values");
+            this.value = "";
+            this.focus();
+        });
+        $(".mini-stat").hide();
+
+        $(".no-matching").hide();
+        $('#find-cards').on("input", function (e) {
+            if ($(this).data("lastval") != $(this).val()) {
+                $(this).data("lastval", $(this).val());
+                //change action
+                var text = $(this).val();
+                //alert($(this).val());
+                var i = 0;
+                $(".simple-user-list li").each(function (index, element) {
+                    // if (element.)
+                    //console.log( $(element).children(".title").text() );
+                    // console.log(element);
+                    var el = element;
+                    //var tos=;
+
+                    // console.log("*****" +$( element ).children(".title").text().search(text));
+                    if (($(element).children(".title").text().search(text)) > -1) {
+                        // console.log( el );
+                        $(el).show();
+                        i++;
+                    } else {
+                        $(el).hide();
+                    }
+
+
+                });
+                if (i == 0) {
+                    $(".no-matching").show();
+                } else {
+                    $(".no-matching").hide();
+
+                }
+
+
+            }
+        });
+
+        $(".simple-user-list li").each(function (index, element) {
+            console.log("here");
+            if ($(element).attr('id') == "{{ carte_principal.numCarte }}") {
+                $(element).css('background-color', '#55a2d1cc');
+                $("#bt" + $(element).attr('id')).css('visibility', 'visible');
+                $("#block-title").html("Voulez vous vraiment désactiver la carte Num: " + $(element).attr('id')+"?");
+                $("#block-details").html("qui appartient à " + $("#carte-info" + $(element).attr('id')).html());
+                $("#block-confim").attr('value', $(element).attr('id'));
+                $("#trsfrt_confirm").attr('value', $(element).attr('id'));
+
+
+            }
+
+
+        });
+
+        Trshift({{ carte_principal.num_carte }});
+        var type={{ type }};
+        console.log(type);
+       if(type==0)
+        {EntrepriseStat();}
+            else
+        {CarteStat();}
+
+
+
+        $(".card").click(function () {
+
+            $(".simple-user-list li").each(function (index, element) {
+
+                $(element).css('background-color', '#00000');
+                $("#bt" + $(element).attr('id')).css('visibility', 'hidden');
+
+
+            });
+            $(".loading").show();
+            $(".tmline").hide();
+            $(".load-mini").show();
+            $(".mini-stat").hide();
+
+            $(this).css('background-color', '#55a2d1cc');
+            $("#bt" + $(this).attr('id')).css('visibility', 'visible');
+            $("#block-title").html("Voulez vous vraiment désactiver la carte Num: " + $(this).attr('id')+"?");
+            $("#block-details").html("qui appartient à " + $("#carte-info" + $(this).attr('id')).html());
+            $("#block-confim").attr('value', $(this).attr('id'));
+            $("#trsfrt_confirm").attr('value', $(this).attr('id'));
+
+
+            console.log($(this).attr('id'));
+            console.log($("#carte-info" + $(this).attr('id')).html());
+            Trshift($(this).attr('id'));
+           if(type==0)
+            {EntrepriseStat();}
+            else
+            {CarteStat();}
+            $("#id").val($(this).attr('id'));
+
+        });
+        $(".voirplus").click(function () {
+            $('#xxx').submit();
+        });
+
+        $("#block-confim").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "{{ path('gestion_carte_block') }}",
+                cache: false,
+                data: {num_carte: $(this).val()},
+                success: function () {
+
+                    $("#carte-etat" + $("#block-confim").val()).html("désactivé");
+
+                }
+            });
+        });
+
+        $("#trsfrt_confirm").click(function () {
+            if (($("#num_carteb").val() != "") && ($("#codedab").val() != "")) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('gestion_carte_trsfrt') }}",
+                    cache: false,
+                    data: {
+                        num_carte: {{ carte_principal.num_carte }},
+                        num_carteb: $('#num_carteb').val(),
+                        montant: $('#montant').val(),
+                        code:$('#CodeDAB').val()
+                    },
+                    success: function (rep) {
+                        if(rep=="success")
+                        {
+                            new PNotify({
+                                title: 'Transfert avec succes',
+                                text: 'Le transfert du montant de'+$("#montant").val()+" DT vers"+$("#num_carteb").val()+" a été effectué avec succès",
+                                type: 'success'
+                            });
+
+                            $("#montant").val("");
+                            $("#num_carteb").val("");
+                            $("#CodeDAB").val("");
+                            Trshift($("#trsfrt_confirm").val());
+                            if(type==0)
+                            {EntrepriseStat();}
+                            else
+                            {CarteStat();}
+
+
+                        }
+
+                        if(rep=="plafond")
+                        {
+                            new PNotify({
+                                title: 'Transfert échoué',
+                                text: 'Le transfert a échoué car la carte bénéficiare a atteindre le plafond',
+                                type: 'error'
+                            });
+                        }
+
+                        if(rep=="solde")
+                        {
+                            new PNotify({
+                                title: 'Transfert échoué',
+                                text: 'Le transfert a échoué car votre solde est inssufisant',
+                                type: 'error'
+                            });
+                        }
+
+                        if(rep=="code")
+                        {
+                            new PNotify({
+                                title: 'Transfert échoué',
+                                text: 'Le transfert a échoué car vous avez saisie une code erroné',
+                                type: 'error'
+                            });
+                        }
+
+                        if(rep=="carte")
+                        {
+                            new PNotify({
+                                title: 'Transfert échoué',
+                                text: 'Le transfert a échoué car la carte bénéficiare est introuvable',
+                                type: 'error'
+                            });
+                        }
+
+                        console.log(rep);
+
+
+
+                    }
+                });
+            }
+            else {
+
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

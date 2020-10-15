@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="gestion_carte_homepage" path="/" methods="GET">
+        <default key="_controller">GestionCarteBundle:GestionCarte:index</default>
+    </route>
+
+    <route id="gestion_carte_trshift" path="/trshift" methods="POST|GET">
+        <default key="_controller">GestionCarteBundle:GestionCarte:Trshift</default>
+    </route>
+    <route id="gestion_carte_block" path="/block" methods="POST|GET">
+        <default key="_controller">GestionCarteBundle:GestionCarte:BlockCarte</default>
+    </route>
+    <route id="gestion_carte_trsfrt" path="/trsfrt" methods="POST">
+        <default key="_controller">GestionCarteBundle:GestionCarte:trsfrt</default>
+    </route>
+    <route id="gestion_carte_info" path="/info" methods="POST">
+        <default key="_controller">GestionCarteBundle:GestionCarte:carteInfo</default>
+    </route>
+    <route id="gestion_carte_entrepriseInfo" path="/entreprise" methods="POST">
+        <default key="_controller">GestionCarteBundle:GestionCarte:EntrepriseInfo</default>
+    </route>
+
+
+</routes>

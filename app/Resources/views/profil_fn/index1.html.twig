@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Menu Collapsed Layout | Okler Themes | Porto-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/bootstrap/css/bootstrap.css")}} >
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/font-awesome/css/font-awesome.css")}} >
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.css")}} >
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/bootstrap-datepicker/css/datepicker3.css")}} >
+
+    <!-- ThemeCSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/theme.css")}} >
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/skins/default.css")}} >
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/theme-custom.css")}} >
+
+    <!-- Head Libs -->
+    <script src={{ asset("Tamplate/vendor/modernizr/modernizr.js")}}></script>
+
+    <link rel="stylesheet" href={{ asset('Tamplate/javascripts/ui-elements/multi-list.css') }}>
+    <style>
+        body { font-family:'Roboto';}
+
+        .list_container {
+            width: 50%;
+            margin: 10px;
+            padding: 20px;
+
+            background-color: #f1f1f1;
+            color:#000;
+        }
+
+        .options_container {
+            margin: 10px;
+        }
+
+        .code {
+            margin: 10px;
+            padding: 20px;
+            font-family: monospace;
+
+            background-color: #E2E2E2;
+        }
+
+
+        .container { margin:150px auto;}
+    </style>
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../" class="logo">
+                <img src={{ asset("Tamplate/images/carte-carburant.jpg")}} height="100" alt="Porto Admin" style="margin-left: -15px;margin-top: -25px;" />
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div ><h2><B>Protail</B> <em>Gestion Cartes Pétrolières</em></h2></div>
+
+        <!-- start: search & user box -->
+        <div class="header-right" style="margin-top: -65px;">
+
+
+            <span class="separator"></span>
+
+            {{ block("userbox","::userbox.html.twig") }}
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        {{ block("sidebar","::menu.html.twig") }}
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2 style="margin-left: 40px;">  Affecter  fonctionalités aux profil</h2>
+
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.html">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Layouts</span></li>
+                        <li><span>Menu Collapsed</span></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+
+           <div class="row">
+               <div class="col-md-4">
+                   <SELECT id="Lprofil" style="height: 400px; width: 330px;" name="nom" size="10">
+                       {% for profil in profils %}
+                       <OPTION value={{ profil.idProfil }}>{{ profil.nomProfil }}
+                       {% endfor %}
+
+                   </SELECT>
+               </div>
+               <div class="col-md-4">
+
+
+            <ul id="list">
+
+                {% for fn in functs %}
+                <li value={{ fn.getIdFN }}>{{ fn.getNomFN }}</li>
+                {% endfor %}
+
+            </ul>
+
+               </div>
+           </div>
+               <div class="row">
+               <form id="form" name="form" action="{{ path('profilfn_all') }}">
+
+                       <div class="col-md-7">
+                           <input type="hidden" name="profil_fn" id="profil_fn" value="">
+                       </div>
+
+                       <div class="col-md-3">
+                           <button type="button" id="btaffecter" class="mb-xs mt-xs mr-xs btn btn-primary" >Affecter</button>
+                       </div>
+
+
+               </form>
+               </div>
+
+
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark" ></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Vendor -->
+    <script src={{ asset("Tamplate/vendor/jquery/jquery.js")}}></script>
+    <script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js")}}></script>
+    <script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js")}}></script>
+    <script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js")}}></script>
+    <script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js")}}></script>
+    <script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js")}}></script>
+    <script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js")}}></script>
+
+
+
+    <!-- Specific Page Vendor -->
+
+    <!-- Theme Base, Components and Settings -->
+    <script src={{ asset("Tamplate/javascripts/theme.js")}}></script>
+
+    <!-- Theme Custom -->
+    <script src={{ asset("Tamplate/javascripts/theme.custom.js")}}></script>
+
+    <!-- Theme Initialization Files -->
+    <script src={{ asset("Tamplate/javascripts/theme.init.js")}}></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+
+    <script src={{ asset('Tamplate/javascripts/ui-elements/multi-list.js') }}></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#list").multiList();
+            $('#list').multiList('unselectAll');
+           // $("#Lprofil").selectedIndex="-1";
+            document.getElementById("Lprofil").selectedIndex = "-1"
+            var pfn = [];
+            {% for x in profil_FNs %}
+            var fnp = {idpfn:{{ x.idPFN }}, idprofil:{{ x.profilFn.idProfil }}, idfn:{{ x.fn.idFN }}};
+            pfn.push(fnp);
+            {% endfor %}
+
+            $('#Lprofil').on("change", function () {
+                //alert($(this).val());
+                $('#list').multiList('unselectAll');
+                 var func=[];
+
+                 for (i = 0; i < pfn.length; i++)
+                 {
+                 if($(this).val()==pfn[i].idprofil)
+                 {
+                 func.push(pfn[i].idfn)
+                 }
+                 }
+
+                 for (i = 0; i < func.length; i++)
+                 {
+                 //alert(func[i])
+                 $('#list').multiList('select', func[i]);
+                 }
+                //$('#list').multiList("select", "1");
+
+
+            });
+
+            $("#btaffecter").click(function(){
+                    if($('#Lprofil').selectedIndex!="-1")
+                    {
+                        var selectedfuncs=$('#list').multiList('getSelected');
+                         $("#profil_fn").val(selectedfuncs.toString()+","+$('#Lprofil').val());
+                        submitForm(selectedfuncs.toString()+","+$('#Lprofil').val());
+                       // document.getElementById("form").submit();
+                    }
+                    else
+                    {
+                        alert('select profil');
+                    }
+            });
+            function submitForm(text) {
+                var http = new XMLHttpRequest();
+                http.open("POST", "{{ path('profilfn_all') }}", true);
+                http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                var params = "profil_fn=" +text; // probably use document.getElementById(...).value
+                http.send(params);
+                http.onload = function() {
+                    //alert(http.responseText);
+                }
+            }
+
+        });
+
+    </script>
+
+</section>
+</body>
+</html>

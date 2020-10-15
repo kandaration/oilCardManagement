@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="reporting_P" path="/carte">
+        <default key="_controller">ReportingBundle:Dashbord:DashbordP</default>
+    </route>
+    <route id="reporting_C" path="/client">
+        <default key="_controller">ReportingBundle:Dashbord:DashbordC</default>
+    </route>
+    <route id="reporting_C_Litres" path="/client/litres" methods="POST">
+        <default key="_controller">ReportingBundle:Dashbord:LitreClt</default>
+    </route>
+    <route id="reporting_G" path="/gerant">
+        <default key="_controller">ReportingBundle:Dashbord:DashbordG</default>
+    </route>
+    <route id="reporting_G-CAtoDay" path="/catoday" methods="POST">
+        <default key="_controller">ReportingBundle:Dashbord:CAToday</default>
+    </route>
+
+    <route id="reporting_G-TopClt" path="/topclt" methods="POST">
+        <default key="_controller">ReportingBundle:Dashbord:TopClt</default>
+    </route>
+
+    <route id="reporting_G-CAPerYear" path="/cayear" methods="POST">
+        <default key="_controller">ReportingBundle:Dashbord:CAYearPerMonth_Produit</default>
+    </route>
+
+    <route id="reportingC_P_CarteDepenceStat" path="/depstat" methods="POST">
+        <default key="_controller">ReportingBundle:Dashbord:DepenceYearPerMonth_Client_Proteurt</default>
+    </route>
+
+
+</routes>

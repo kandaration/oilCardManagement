@@ -1,0 +1,58 @@
+{% extends 'index.html.twig.html.twig' %}
+
+{% block menu %}
+    {% block menu %}{% endblock %}
+    {%  set ch="" %}
+    {% set menu=0 %}
+    {% for func in functions  %}
+        {%  set ch="" %}
+        {% set menu=0 %}
+
+        {% if (strpos()) and func.menu!= ch %}
+            {
+            if(menu=2)
+            {
+            </ul>
+            </li>
+            }
+            <li class="nav-parent">
+                <a>
+                    <i class="func.icon" aria-hidden="true"></i>
+                    <span>func.name</span>
+                </a>
+                <ul class="nav nav-children">
+                    menu=2
+                    }
+
+                    else if (func contient '-' and func.menu== ch)
+
+                    {
+
+                    <li>
+                        <a href={{ path('func.nommenu')}}>
+                            func.nommenu
+                        </a>
+                    </li>
+                    menu=2
+
+
+                    }
+                    else if(func  not contient '-')
+                    {
+                    <li>
+                        <a href={{ path('func.nommenu')}}>
+                            <i class="func.icon" aria-hidden="true"></i>
+                            <span>func.nommenu</span>
+                        </a>
+                    </li>
+                    menu =0
+                    }
+
+                    endfor
+
+                    if menu=2 then
+                    {
+                </ul>
+            </li>
+            }
+    {% endblock %}

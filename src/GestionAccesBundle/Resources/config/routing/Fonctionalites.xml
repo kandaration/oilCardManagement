@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="fonctionalite_index" path="/" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Fonctionalite:index</default>
+    </route>
+    <route id="fonctionalite_icon" path="/icon" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Fonctionalite:icon</default>
+    </route>
+    <route id="fonctionalite_show" path="/{id}/show" methods="GET">
+        <default key="_controller">GestionAccesBundle:Fonctionalite:show</default>
+    </route>
+
+    <route id="fonctionalite_new" path="/new" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Fonctionalite:new</default>
+    </route>
+
+    <route id="fonctionalite_edit" path="/{id}/edit" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Fonctionalite:edit</default>
+    </route>
+
+    <route id="fonctionalite_delete" path="/{id}/delete" methods="GET">
+        <default key="_controller">GestionAccesBundle:Fonctionalite:delete</default>
+    </route>
+
+
+</routes>

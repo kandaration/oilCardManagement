@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionCarteBundle\Entity\Station" repository-class="GestionCarteBundle\Repository\StationRepository">
+        <id name="id_station" type="integer"  column="id_station">
+
+        </id>
+
+
+        <field name="fax" column="fax" type="string" length="20"   />
+        <field name="adress" column="adress" type="string" length="250"   />
+        <field name="longitude" column="longitude" type="string" length="250"   />
+        <field name="latitude" column="latitude" type="string" length="250"   />
+
+
+
+
+        <one-to-many
+                field="terminals"
+                target-entity="GestionTransactionBundle\Entity\Terminal"
+                mapped-by="Station" />
+
+        <one-to-many
+                field="transactions"
+                target-entity="GestionTransactionBundle\Entity\Transaction"
+                mapped-by="station" />
+
+        <many-to-one
+                field="gerant"
+                target-entity="GestionCarteBundle\Entity\Gerant"
+                inversed-by="stations"
+        >
+
+            <join-column name="id_gerant" referenced-column-name="id_gerant" />
+        </many-to-one>
+
+
+
+    </entity>
+
+</doctrine-mapping>

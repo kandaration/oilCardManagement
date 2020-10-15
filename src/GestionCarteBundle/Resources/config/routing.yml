@@ -1,0 +1,6 @@
+gestion_carte:
+    resource: "@GestionCarteBundle/Resources/config/routing/Carte.xml"
+    prefix:   /carte
+gestion_station:
+    resource: "@GestionCarteBundle/Resources/config/routing/Station.xml"
+    prefix:   /station

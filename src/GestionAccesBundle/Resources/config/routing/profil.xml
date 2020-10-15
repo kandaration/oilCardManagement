@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="profil_index" path="/" methods="GET">
+        <default key="_controller">GestionAccesBundle:Profil:index</default>
+    </route>
+
+    <route id="profil_show" path="/{id}/show" methods="GET">
+        <default key="_controller">GestionAccesBundle:Profil:show</default>
+    </route>
+
+    <route id="profil_new" path="/new" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Profil:new</default>
+    </route>
+
+    <route id="profil_edit" path="/{id}/edit" methods="GET|POST">
+        <default key="_controller">GestionAccesBundle:Profil:edit</default>
+    </route>
+
+    <route id="profil_delete" path="/{id}/delete" methods="GET">
+        <default key="_controller">GestionAccesBundle:Profil:delete</default>
+    </route>
+
+</routes>

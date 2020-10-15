@@ -1,0 +1,3 @@
+gestion_acces_profiluser:
+        resource: "@ReportingBundle/Resources/config/Dashbord.xml"
+        prefix:   /dashboard

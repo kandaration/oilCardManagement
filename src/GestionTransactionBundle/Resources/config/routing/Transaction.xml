@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="transaction_index" path="/" methods="GET|POST">
+        <default key="_controller">GestionTransactionBundle:Transaction:index</default>
+    </route>
+    <route id="transaction_historique" path="/historique" methods="POST">
+        <default key="_controller">GestionTransactionBundle:Transaction:historique</default>
+    </route>
+    <route id="transaction_gerant" path="/gerant" methods="POST|GET">
+        <default key="_controller">GestionTransactionBundle:Transaction:trGerant</default>
+    </route>
+    <route id="transaction_day" path="/gerant/day" methods="POST|GET">
+        <default key="_controller">GestionTransactionBundle:Transaction:trPerDay</default>
+    </route>
+    <route id="transaction_GDaterange" path="/gerant/daterange" methods="POST">
+        <default key="_controller">GestionTransactionBundle:Transaction:historiqueGerant</default>
+    </route>
+ <route id="transaction_GDaterangeAdd" path="/rafik" methods="GET">
+        <default key="_controller">GestionTransactionBundle:Transaction:trsAdd</default>
+    </route>
+
+
+
+
+</routes>

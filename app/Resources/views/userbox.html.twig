@@ -1,0 +1,65 @@
+{% block userbox %}
+    <div id="userbox" class="userbox">
+        <a href="#" data-toggle="dropdown">
+            <figure class="profile-picture">
+                {% set path_profil="gestion_carte_homepage" %}
+                {% if profil is defined %}
+                    {% set type=profil.type %}
+                    {% elseif gerant is defined %}
+                        {% set type=gerant.type %}
+                    {% else %}
+                        {% set type=0 %}
+
+                {% endif %}
+                {% if type==3 %}
+                    <img src={{asset("Tamplate/images/admin.jpg") }} class="img-circle" >
+                {% elseif type==0 %}
+                    <img src={{asset("Tamplate/images/client.jpg") }} class="img-circle" >
+
+
+                {% elseif type==2 %}
+                    <img src={{asset("Tamplate/images/porteur.jpg") }} class="img-circle" >
+
+
+                {% else %}
+                    <img src={{ asset("Tamplate/images/gerant.jpg")}} alt="Joseph_Doe" class="img-circle"  />
+                    {% set path_profil="gestion_station_homepage" %}
+                {% endif %}
+
+            </figure>
+            <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                {% if type==3 %}
+                    <span class="name">{{ profil.nom}}</span>
+                    <span class="role">{{ profil.prenom }}</span>
+                {% elseif type==0 %}
+                    <span class="name">{{ clt.designation}}</span>
+                    <span class="role">{{ clt.adress }}</span>
+                {% elseif type==2 %}
+                    <span class="name">{{ profil.nom }}</span>
+                    <span class="role">{{ profil.prenom }}</span>
+                 {% else %}
+                    <span class="name">{{gerant.nom }}</span>
+                    <span class="role">{{ gerant.prenom }}</span>
+
+                {% endif %}
+
+            </div>
+
+            <i class="fa custom-caret"></i>
+        </a>
+
+        <div class="dropdown-menu">
+            <ul class="list-unstyled">
+                <li class="divider"></li>
+                {% if type!=3 %}
+                <li>
+                    <a role="menuitem" tabindex="-1" href={{ path(path_profil) }}><i class="fa fa-user"></i>Mon Profil</a>
+                </li>
+                    {% endif %}
+                <li>
+                    <a role="menuitem" tabindex="-1" href={{ path('utilisateur_disconnect') }}><i class="fa fa-power-off"></i> Deconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

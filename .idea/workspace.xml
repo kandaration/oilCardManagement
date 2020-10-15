@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f167071a-157c-4cf1-bf82-ae91216e6f54" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <pharPath>$PROJECT_DIR$/composer.phar</pharPath>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="GestionCarteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Controller/GestionCarteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashbordController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ReportingBundle/Controller/DashbordController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="84" column="15" lean-forward="false" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Acceuil.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/Acceuil.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index2.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/index2.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit1.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/edit1.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Entity/Client.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>numeric</find>
+      <find>positive-integer</find>
+      <find>num_carte</find>
+      <find>id_cl</find>
+      <find>Ttel</find>
+      <find>class=&quot;sp</find>
+      <find>userb</find>
+      <find>type</find>
+      <find>logout</find>
+      <find>logou</find>
+      <find>Menu Collapsed LayoutAff</find>
+      <find>show</find>
+      <find>Menu Collapsed Layout</find>
+      <find>path</find>
+      <find>logo</find>
+      <find>col-md-8 col-lg-6</find>
+      <find>sk-</find>
+      <find>dash</find>
+      <find>portail</find>
+      <find>Popular Posts</find>
+      <find>cnx</find>
+      <find>menu</find>
+      <find>menu co</find>
+      <find>menu c</find>
+      <find>Tfnadd</find>
+      <find>Tdescadd</find>
+      <find>dec</find>
+      <find>time</find>
+      <find>prot</find>
+      <find>conne</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>getIdUtilisateur</replace>
+      <replace>{{ asset(&quot;Tamplate/</replace>
+      <replace>js&quot;)}}</replace>
+      <replace>Fonctionalite</replace>
+      <replace>fonctionalite</replace>
+      <replace>getIdPFN</replace>
+      <replace>{{asset(&quot;Tamplate</replace>
+      <replace>.css&quot;)}}</replace>
+      <replace>.js&quot;)}}</replace>
+      <replace>)}}'/&gt;</replace>
+      <replace>'col-md-3'</replace>
+      <replace>&amp;#34</replace>
+      <replace>&amp;#34;</replace>
+      <replace>&amp;lsaquo;</replace>
+      <replace>&amp;rsaquo;</replace>
+      <replace>'{{asset</replace>
+      <replace>'{{asset(&quot;Tamplate</replace>
+      <replace>&quot; )}}'/&gt;</replace>
+      <replace>find-stations</replace>
+      <replace>TrTo</replace>
+      <replace>no-radious-primary</replace>
+      <replace>TrTO</replace>
+      <replace>trsfrt_confirm</replace>
+      <replace>CAStations</replace>
+      <replace>}}&quot;&gt;&lt;/script&gt;</replace>
+      <replace>$AllTrs</replace>
+      <replace>$AllTrs[$i]</replace>
+    </replaceStrings>
+  </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:generate:entities GestionCarteBundle" />
+      <command text="s doctrine:generate:entities GestionTransactionBundle" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:generate:entities GestionTransactionBundle" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:generate:entities GestionTransactionBundle" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:generate:entities GestionTransacationBundle" />
+      <command text="s doctrine:generate:entities GestionTransactionBundle" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:generate:entities GestionCarteBundle" />
+      <command text="s doctrine:generate:entities GestionTransactionBundle:Transaction" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:generate:entities GestionTransactionBundle:Transaction" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s generate:bundle " />
+      <command text="s doctrine:generate:entities GestionCarteBundle:Carte" />
+      <command text="s doctrine:schema:update --dump-sql " />
+      <command text="s doctrine:schema:update --force" />
+      <command text="composer require beberlei/DoctrineExtensions" />
+    </commandsHistory>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/GestionTransactionBundle/Resources/config/Doctrine/Transaction.orm.xml" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Entity/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/src/ReportingBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/utilisateur/menu.html.twig" />
+        <option value="$PROJECT_DIR$/src/GestionCarteBundle/Controller/GestionStationController.php" />
+        <option value="$PROJECT_DIR$/src/ReportingBundle/Controller/DashboardController.php" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/profilG.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/profilC.html.twig" />
+        <option value="$PROJECT_DIR$/web/Tamplate/javascripts/ui-elements/examples.notifications.js" />
+        <option value="$PROJECT_DIR$/src/GestionCarteBundle/Resources/config/Doctrine/Carte.orm.xml" />
+        <option value="$PROJECT_DIR$/src/GestionCarteBundle/Controller/GestionCarteController.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/GestionTransactionBundle/Entity/Transaction.php" />
+        <option value="$PROJECT_DIR$/src/GestionTransactionBundle/Resources/config/routing/Transaction.xml" />
+        <option value="$PROJECT_DIR$/src/GestionTransactionBundle/Controller/TransactionController.php" />
+        <option value="$PROJECT_DIR$/src/GestionCarteBundle/Entity/Gerant.php" />
+        <option value="$PROJECT_DIR$/web/Tamplate/javascripts/highcharts.js" />
+        <option value="$PROJECT_DIR$/src/GestionCarteBundle/Resources/config/routing/Carte.xml" />
+        <option value="$PROJECT_DIR$/src/GestionTransactionBundle/Repository/TransactionRepository.php" />
+        <option value="$PROJECT_DIR$/src/ReportingBundle/Resources/config/Dashbord.xml" />
+        <option value="$PROJECT_DIR$/web/Tamplate/stylesheets/theme.css" />
+        <option value="$PROJECT_DIR$/src/GestionCarteBundle/Entity/Carte.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/userbox.html.twig" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Controller/ProfilUtilisateurController.php" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Controller/ProfilController.php" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Controller/Profil_FNController.php" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Controller/FonctionaliteController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/utilisateur/Acceuil.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/utilisateur/connexion.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/menu.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Station/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Cartes/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/profil_fn/index1.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/profilutilisateur/index1.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/utilisateur/index2.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/utilisateur/show1.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/profil/index1.html.twig" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Resources/config/routing/utilisateur.xml" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Resources/config/routing.xml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardC.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardP.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/fonctionalite/index1.html.twig" />
+        <option value="$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/transaction/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Dashbords/DashbordG.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/transaction/transactionGerant.html.twig" />
+        <option value="$PROJECT_DIR$/src/ReportingBundle/Controller/DashbordController.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="http://localhost/CartePetroliere/web/app_dev.php" id="7a59c9fc-da67-4c91-9bc1-ed57075216c0" name="pfe" />
+      <server host="localhost" id="d91297c3-dde5-4eb6-811e-9bfc500a1157" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\xampp\htdocs\CartePetroliere" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1:80" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/beberlei/DoctrineExtensions" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CartePetroliere" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CartePetroliere" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CartePetroliere" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CartePetroliere" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CartePetroliere" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CartePetroliere" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="session&#9;null&#9;null&#10;block java&#9;null&#9;null" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\CartePetroliere\web\Tamplate\javascripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\CartePetroliere\app\Resources\views" />
+      <recent name="C:\xampp\htdocs\CartePetroliere\app\Resources\views\utilisateur" />
+      <recent name="C:\xampp\htdocs\CartePetroliere\src\GestionCarteBundle\Resources\config\routing" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Remote Debug.pfe">
+    <configuration default="false" name="UtilisateurController.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/CartePetroliere/src/GestionAccesBundle/Controller/UtilisateurController.php">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="false" name="pfe" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" activateToolWindowBeforeRun="false" server_name="pfe" session_id="Med Dhia">
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="PHP Remote Debug.pfe" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.UtilisateurController.php" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.UtilisateurController.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f167071a-157c-4cf1-bf82-ae91216e6f54" name="Default" comment="" />
+      <created>1490306058064</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1490306058064</updated>
+      <workItem from="1490306412863" duration="105000" />
+      <workItem from="1490306549435" duration="2231000" />
+      <workItem from="1490309558102" duration="3709000" />
+      <workItem from="1490313440768" duration="140000" />
+      <workItem from="1490344176243" duration="6031000" />
+      <workItem from="1490350319332" duration="8614000" />
+      <workItem from="1490608664544" duration="13617000" />
+      <workItem from="1490641504388" duration="12047000" />
+      <workItem from="1490707615763" duration="21649000" />
+      <workItem from="1490743908559" duration="5254000" />
+      <workItem from="1490779203365" duration="7114000" />
+      <workItem from="1490786913714" duration="286000" />
+      <workItem from="1490787220291" duration="366000" />
+      <workItem from="1490787674308" duration="134000" />
+      <workItem from="1490787830307" duration="653000" />
+      <workItem from="1490788563623" duration="7501000" />
+      <workItem from="1490798613379" duration="237000" />
+      <workItem from="1490798865906" duration="5372000" />
+      <workItem from="1490862110875" duration="16338000" />
+      <workItem from="1490953452261" duration="5822000" />
+      <workItem from="1490965404825" duration="5299000" />
+      <workItem from="1491064753945" duration="3535000" />
+      <workItem from="1491295222720" duration="88000" />
+      <workItem from="1491295332582" duration="280000" />
+      <workItem from="1491295629031" duration="5626000" />
+      <workItem from="1491308811781" duration="5238000" />
+      <workItem from="1491331135548" duration="5506000" />
+      <workItem from="1491428598595" duration="6542000" />
+      <workItem from="1491466062786" duration="24279000" />
+      <workItem from="1491553839998" duration="10666000" />
+      <workItem from="1491655169603" duration="16041000" />
+      <workItem from="1491764456215" duration="13068000" />
+      <workItem from="1491781484812" duration="3692000" />
+      <workItem from="1491844430481" duration="2384000" />
+      <workItem from="1491901536232" duration="21717000" />
+      <workItem from="1492009794394" duration="15878000" />
+      <workItem from="1492075551858" duration="8571000" />
+      <workItem from="1492105478740" duration="1171000" />
+      <workItem from="1492166405681" duration="4199000" />
+      <workItem from="1492176017681" duration="3164000" />
+      <workItem from="1492371578801" duration="10586000" />
+      <workItem from="1492420555492" duration="17825000" />
+      <workItem from="1492521288535" duration="7446000" />
+      <workItem from="1492557404588" duration="120000" />
+      <workItem from="1492614925630" duration="1200000" />
+      <workItem from="1492708309457" duration="11742000" />
+      <workItem from="1492735981958" duration="103000" />
+      <workItem from="1492736096292" duration="821000" />
+      <workItem from="1492736931613" duration="1129000" />
+      <workItem from="1492765076707" duration="17244000" />
+      <workItem from="1492898807240" duration="758000" />
+      <workItem from="1492901284173" duration="13701000" />
+      <workItem from="1492940941001" duration="11845000" />
+      <workItem from="1492982923231" duration="6380000" />
+      <workItem from="1493073957015" duration="8763000" />
+      <workItem from="1493109322476" duration="11099000" />
+      <workItem from="1493124015825" duration="13705000" />
+      <workItem from="1493196703279" duration="8964000" />
+      <workItem from="1493239010628" duration="12233000" />
+      <workItem from="1493259027574" duration="1175000" />
+      <workItem from="1493282134189" duration="26201000" />
+      <workItem from="1493325010814" duration="11625000" />
+      <workItem from="1493564205344" duration="5409000" />
+      <workItem from="1493571544380" duration="22604000" />
+      <workItem from="1493638189170" duration="6746000" />
+      <workItem from="1493668439944" duration="16297000" />
+      <workItem from="1493715734711" duration="21532000" />
+      <workItem from="1493751810571" duration="701000" />
+      <workItem from="1493763803549" duration="7999000" />
+      <workItem from="1493841409242" duration="21743000" />
+      <workItem from="1493889830454" duration="10705000" />
+      <workItem from="1493906002700" duration="6654000" />
+      <workItem from="1493933085427" duration="6607000" />
+      <workItem from="1493953013231" duration="980000" />
+      <workItem from="1493986533440" duration="17762000" />
+      <workItem from="1494019476580" duration="16898000" />
+      <workItem from="1494076424304" duration="6443000" />
+      <workItem from="1494161329190" duration="6221000" />
+      <workItem from="1494183928980" duration="21076000" />
+      <workItem from="1494232636383" duration="22181000" />
+      <workItem from="1494268174669" duration="19592000" />
+      <workItem from="1494326673589" duration="16721000" />
+      <workItem from="1494347882785" duration="836000" />
+      <workItem from="1494357149916" duration="10288000" />
+      <workItem from="1494405679559" duration="11926000" />
+      <workItem from="1494440229795" duration="1035000" />
+      <workItem from="1494495631033" duration="566000" />
+      <workItem from="1494497581932" duration="624000" />
+      <workItem from="1494508455231" duration="600000" />
+      <workItem from="1494607150512" duration="599000" />
+      <workItem from="1494725376945" duration="46000" />
+      <workItem from="1494857341439" duration="1272000" />
+      <workItem from="1494929675087" duration="17167000" />
+      <workItem from="1495010660586" duration="22809000" />
+      <workItem from="1495095080570" duration="22310000" />
+      <workItem from="1495129600049" duration="1344000" />
+      <workItem from="1495185960570" duration="11221000" />
+      <workItem from="1495365675840" duration="599000" />
+      <workItem from="1495403836823" duration="13534000" />
+      <workItem from="1495458858134" duration="9999000" />
+      <workItem from="1495483754415" duration="31207000" />
+      <workItem from="1495515616190" duration="401000" />
+      <workItem from="1495529404061" duration="174000" />
+      <workItem from="1495546695051" duration="126000" />
+      <workItem from="1495653910771" duration="2407000" />
+      <workItem from="1495707341010" duration="790000" />
+      <workItem from="1496167418853" duration="599000" />
+      <workItem from="1502474308555" duration="93000" />
+      <workItem from="1507855069460" duration="231000" />
+      <workItem from="1507980781639" duration="245000" />
+      <workItem from="1507987431489" duration="253000" />
+      <workItem from="1508026368028" duration="21000" />
+      <workItem from="1508094828734" duration="277000" />
+      <workItem from="1510871552146" duration="599000" />
+      <workItem from="1511202609618" duration="13000" />
+      <workItem from="1511213501623" duration="31000" />
+      <workItem from="1511740490020" duration="134000" />
+      <workItem from="1513637014038" duration="596000" />
+      <workItem from="1515529910441" duration="599000" />
+      <workItem from="1515786814296" duration="599000" />
+      <workItem from="1518463554183" duration="596000" />
+      <workItem from="1518561218359" duration="596000" />
+      <workItem from="1519498605689" duration="1954000" />
+      <workItem from="1521742264625" duration="145000" />
+      <workItem from="1521817880492" duration="599000" />
+      <workItem from="1521823014326" duration="9000" />
+      <workItem from="1522716147154" duration="397000" />
+      <workItem from="1522810292976" duration="47000" />
+      <workItem from="1524522929548" duration="437000" />
+      <workItem from="1525211283842" duration="172000" />
+      <workItem from="1525212156671" duration="2000" />
+      <workItem from="1525301559356" duration="187000" />
+      <workItem from="1529370243435" duration="303000" />
+      <workItem from="1529370898133" duration="783000" />
+      <workItem from="1529709343703" duration="1742000" />
+      <workItem from="1534238337763" duration="637000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="898476000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17937702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785176" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29105324" sideWeight="0.50590765" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49570355" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28425822" sideWeight="0.49409238" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4371461" sideWeight="0.49516648" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/DefaultController.php</url>
+          <line>31</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php</url>
+          <line>348</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/ReportingBundle/Controller/DashbordController.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/GestionCarteBundle/Controller/GestionCarteController.php</url>
+          <line>45</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php</url>
+          <line>339</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php</url>
+          <line>330</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/GestionCarteBundle/Controller/GestionCarteController.php</url>
+          <line>34</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/ReportingBundle/Controller/DashbordController.php</url>
+          <line>153</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="238" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="app_dev.php">
+        <watch expression="$this-&gt;container-&gt;parameters['data_collector.templates']" />
+        <watch expression="$log" />
+        <watch expression="$postData" />
+        <watch expression="$GLOBALS['request']" />
+        <watch expression="$test" />
+        <watch expression="$test" />
+        <watch expression="$test" />
+        <watch expression="$request-&gt;attributes" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardC.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardP.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1804">
+          <caret line="82" column="58" lean-forward="false" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashbordG.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profil/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7634">
+          <caret line="347" column="12" lean-forward="false" selection-start-line="339" selection-start-column="7" selection-end-line="347" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Cartes/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profil_fn/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/transaction/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3454">
+          <caret line="157" column="77" lean-forward="false" selection-start-line="157" selection-start-column="77" selection-end-line="157" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/transaction/transactionGerant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5588">
+          <caret line="254" column="46" lean-forward="false" selection-start-line="254" selection-start-column="46" selection-end-line="254" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/fonctionalite/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8822">
+          <caret line="401" column="26" lean-forward="false" selection-start-line="401" selection-start-column="26" selection-end-line="401" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6512">
+          <caret line="300" column="57" lean-forward="false" selection-start-line="300" selection-start-column="57" selection-end-line="300" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardC.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardP.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1804">
+          <caret line="82" column="58" lean-forward="false" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashbordG.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profil/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7634">
+          <caret line="347" column="12" lean-forward="false" selection-start-line="339" selection-start-column="7" selection-end-line="347" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Cartes/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profil_fn/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/transaction/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3454">
+          <caret line="157" column="77" lean-forward="false" selection-start-line="157" selection-start-column="77" selection-end-line="157" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/transaction/transactionGerant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/fonctionalite/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8822">
+          <caret line="401" column="26" lean-forward="false" selection-start-line="401" selection-start-column="26" selection-end-line="401" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6512">
+          <caret line="300" column="57" lean-forward="false" selection-start-line="300" selection-start-column="57" selection-end-line="300" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardC.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardP.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1804">
+          <caret line="82" column="58" lean-forward="false" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashbordG.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profil/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7634">
+          <caret line="347" column="12" lean-forward="false" selection-start-line="339" selection-start-column="7" selection-end-line="347" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/profil_fn/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/transaction/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3454">
+          <caret line="157" column="77" lean-forward="false" selection-start-line="157" selection-start-column="77" selection-end-line="157" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/transaction/transactionGerant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="254" column="46" lean-forward="false" selection-start-line="254" selection-start-column="46" selection-end-line="254" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/fonctionalite/index1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8822">
+          <caret line="401" column="26" lean-forward="false" selection-start-line="401" selection-start-column="26" selection-end-line="401" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardC.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Dashbords/DashboardP.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1804">
+          <caret line="82" column="58" lean-forward="false" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/connexion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionAccesBundle/Controller/UtilisateurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1382">
+          <caret line="359" column="59" lean-forward="false" selection-start-line="359" selection-start-column="54" selection-end-line="359" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionAccesBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionAccesBundle/Resources/config/routing.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionAccesBundle/Resources/config/routing/utilisateur.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Cartes/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="79" column="79" lean-forward="false" selection-start-line="79" selection-start-column="79" selection-end-line="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Resources/config/routing/Carte.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Resources/config/Doctrine/Carte.orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/edit1.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/index2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/GestionCarteBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/utilisateur/Acceuil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GestionCarteBundle/Controller/GestionCarteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReportingBundle/Controller/DashbordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="84" column="15" lean-forward="false" selection-start-line="84" selection-start-column="15" selection-end-line="84" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,744 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Menu Collapsed Layout | Okler Themes | Porto-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template"/>
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/bootstrap/css/bootstrap.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/font-awesome/css/font-awesome.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/magnific-popup/magnific-popup.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/bootstrap-datepicker/css/datepicker3.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/fullcalendar/fullcalendar.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/fullcalendar/fullcalendar.print.css") }}' media="print"/>
+
+
+    <!-- ThemeCSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/theme.css") }}'/>
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/skins/default.css") }}'/>
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/theme-custom.css") }}'/>
+    -->
+
+    <!-- Head Libs -->
+    <script src={{ asset("Tamplate/vendor/modernizr/modernizr.js") }}></script>
+<style>
+    .modal-body
+    {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    div.nodata
+    {
+
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+        color: black;
+        border-radius: 20px;
+        -moz-border-radius: 15px;
+    }
+    div.testrecharge
+    {
+
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+        background: mediumpurple ;
+        color: white;
+        border-radius: 20px;
+        -moz-border-radius: 15px;
+    }
+    div.testtrfrt
+    {
+
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+        background: #4260db;
+        color: white;
+        border-radius: 20px;
+        -moz-border-radius: 15px;
+    }
+    div.testachat
+    {
+
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+        background: #12db68;
+        color: white;
+        border-radius: 20px;
+        -moz-border-radius: 15px;
+    }
+    div.testannul
+    {
+
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+        background: #db3b3c;
+        color: white;
+        border-radius: 20px;
+        -moz-border-radius: 15px;
+    }
+    div.nbrtrs
+      {
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 2px solid #000;
+          background: #558ddb;
+          text-align:center;
+          color: white;
+      }
+    div.ca
+    {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #000;
+        background: #e60000;
+        text-align:center;
+        color: white;
+    }
+
+
+</style>
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../" class="logo">
+                <img src={{ asset("Tamplate/images/carte-carburant.jpg") }} height="100" alt="Porto Admin"
+                     style="margin-left: -15px;margin-top: -25px;"/>
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+                 data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div ><h2><B>Portail</B> <em>Gestion Cartes Pétrolières</em></h2></div>
+
+        <!-- start: search & user box -->
+        <div class="header-right" style="margin-top: -65px;">
+
+
+            <span class="separator"></span>
+
+            {{ block("userbox","::userbox.html.twig") }}
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        {{ block("sidebar","::menu.html.twig") }}
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2 style="margin-left: 40px;">Transactions</h2>
+
+
+            </header>
+
+            <!-- start: page -->
+
+            <div class="row" style="margin-top: -50px;">
+                <div class="col-md-7"></div>
+                <div class="input-daterange input-group col-md-5" data-plugin-datepicker>
+														<span class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</span>
+                    <input type="text" class="form-control" name="start" id="start">
+                    <span class="input-group-addon">to</span>
+                    <input type="text" class="form-control" name="end" id="end">
+                </div>
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1">
+                        <button  id="btfilter" class="btn btn-primary">Filtrer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10" id="calendar"></div>
+                    <div class="col-md-1"></div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="trans modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Transarctions</h4>
+                        </div>
+                        <div class="modal-body">
+                             <div class="row loading" >
+                                 <img src="{{asset("Tamplate/images/loading.gif")}}" style="margin-left: 43px;">
+                             </div>
+                            <div clas="row" id="trs">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer" id="total">
+
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
+
+
+    <!-- end: page -->
+</section>
+</div>
+
+<aside id="sidebar-right" class="sidebar-right">
+    <div class="nano">
+        <div class="nano-content">
+            <a href="#" class="mobile-close visible-xs">
+                Collapse <i class="fa fa-chevron-right"></i>
+            </a>
+
+            <div class="sidebar-right-wrapper">
+
+                <div class="sidebar-widget widget-calendar">
+                    <h6>Upcoming Tasks</h6>
+                    <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                    <ul>
+                        <li>
+                            <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                            <span>Company Meeting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget widget-friends">
+                    <h6>Friends</h6>
+                    <ul>
+                        <li class="status-online">
+                            <figure class="profile-picture">
+                                <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                     class="img-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                        <li class="status-online">
+                            <figure class="profile-picture">
+                                <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                     class="img-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                        <li class="status-offline">
+                            <figure class="profile-picture">
+                                <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                     class="img-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                        <li class="status-offline">
+                            <figure class="profile-picture">
+                                <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                     class="img-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery/jquery.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js") }}></script>
+<script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js") }}></script>
+<script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js") }})}}></script>
+<script>
+    $.fn.datepicker.defaults.format = "dd/mm/yyyy";
+
+
+</script>
+
+<!-- Specific Page Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js") }}></script>
+<script src={{ asset("Tamplate/vendor/select2/select2.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-multiselect/bootstrap-multiselect.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-maskedinput/jquery.maskedinput.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js") }}></script>
+<script src={{ asset("Tamplate/vendor/fuelux/js/spinner.js") }}></script>
+<script src={{ asset("Tamplate/vendor/dropzone/dropzone.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/markdown.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/to-markdown.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/bootstrap-markdown.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/lib/codemirror.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/addon/selection/active-line.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/addon/edit/matchbrackets.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/javascript/javascript.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/xml/xml.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/htmlmixed/htmlmixed.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/css/css.js") }}></script>
+<script src={{ asset("Tamplate/vendor/summernote/summernote.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-maxlength/bootstrap-maxlength.js") }}></script>
+<script src={{ asset("Tamplate/vendor/ios7-switch/ios7-switch.js") }}></script>
+<script src={{ asset("Tamplate/vendor/fullcalendar/lib/moment.min.js") }}></script>
+<script src={{ asset("Tamplate/vendor/fullcalendar/fullcalendar.js") }}></script>
+<script src={{ asset("Tamplate/javascripts/ui-elements/examples.modals.js") }}></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src={{ asset("Tamplate/javascripts/theme.js") }}></script>
+
+<!-- Theme Custom -->
+<script src={{ asset("Tamplate/javascripts/theme.custom.js") }}></script>
+
+<!-- Theme Initialization Files -->
+<script src={{ asset("Tamplate/javascripts/theme.init.js") }}></script>
+<!-- Examples -->
+<script src={{ asset("Tamplate/javascripts/forms/examples.advanced.form.js") }}></script>
+
+<script src={{ asset("Tamplate/javascripts/pages/examples.calendar.js") }}></script>
+
+<script>
+    $(document).ready(function () {
+
+
+        function initCalendar(data) {
+            var $calendar = $('#calendar');
+
+
+            $calendar.fullCalendar({
+
+
+                timeFormat: 'h:mm',
+
+                titleFormat: {
+                    month: 'MMMM YYYY',      // September 2009
+                    week: "d MMM YYYY",      // Sep 13 2009
+                    day: 'dddd d MMM YYYY' // Tuesday, Sep 8, 2009
+                },
+
+                themeButtonIcons: {
+                    prev: 'fa fa-caret-left',
+                    next: 'fa fa-caret-right'
+
+                },
+                customButtons: {
+                    myCustomButton: {
+                        text: 'custom!',
+                        click: function() {
+                            alert('clicked the custom button!');
+                        }
+                    }
+                },
+
+
+                header: {
+                    center: 'title',
+                    left:'prev,today,next',
+                    right: 'myCustomButton'
+                },
+                buttonText: {
+                    prevYear: '<<',
+                    nextYear: '>>',
+                    test:'Year'
+                },
+
+
+                // this allows things to be dropped onto the calendar !!!
+                drop: function (date, allDay) { // this function is called when something is dropped
+                    var $externalEvent = $(this);
+                    // retrieve the dropped element's stored Event Object
+                    var originalEventObject = $externalEvent.data('eventObject');
+
+                    // we need to copy it, so that multiple events don't have a reference to the same object
+                    var copiedEventObject = $.extend({}, originalEventObject);
+
+                    // assign it the date that was reported
+                    copiedEventObject.start = date;
+                    copiedEventObject.allDay = allDay;
+                    copiedEventObject.className = $externalEvent.attr('data-event-class');
+
+                    // render the event on the calendar
+                    // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                    $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#RemoveAfterDrop').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+
+                },
+                dayClick: function (date, jsEvent, view,event) {
+
+                    console.log('Clicked on: ' + date.format());
+                    var todaysEvents = $('#calendar').fullCalendar('clientEvents', function(event) {
+                        if(moment(date).format('YYYY-MM-DD')==moment(event._start).format('YYYY-MM-DD'))
+                            return event.title;
+
+
+                    });
+                    $("#total").empty();
+
+
+
+
+
+                    $('.trans').modal('show');
+
+
+                    $(".loading").show();
+                    $("#trs").empty();
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ path('transaction_day')}}",
+                        cache: false,
+                        data:{day:date.format(),id_station:{{ idstation}}},
+                        success: function(rep){
+                            var divtrs=document.getElementById('trs');
+                            console.log(rep);
+                             if (rep=="[]")
+                             {
+                                 $(".loading").hide();
+                                 var nodata=document.createElement('div');
+                                 nodata.className="col-md-12 nodata";
+                                 nodata.innerHTML= "Pas de transaction pour le: "+date.format();
+                                 divtrs.append(nodata);
+                             }
+                             else {
+                                 var total=document.getElementById('total');
+
+                                 var total_modal=document.createElement('div');
+                                 total_modal.className="row";
+                                 var nbrtrs=document.createElement('div');
+                                 nbrtrs.className="col-md-6 nbrtrs";
+                                 nbrtrs.innerHTML= todaysEvents[0].title;
+                                 total_modal.append(nbrtrs);
+                                 var ca=document.createElement('div');
+                                 ca.className="col-md-6 ca";
+                                 ca.innerHTML= todaysEvents[1].title;
+                                 total_modal.append(ca);
+                                 total.append(total_modal);
+
+                                 $.each(JSON.parse(rep), function (i, item) {
+
+                                     var divtr = document.createElement('div');
+                                     if (item.type.abreviation == "recharge") {
+                                         divtr.className = "testrecharge col-md-12";
+                                     }
+                                     if (item.type.abreviation == "trft") {
+                                         divtr.className = "testtrfrt col-md-12";
+                                     }
+                                     if (item.type.abreviation == "ach") {
+                                         divtr.className = "testachat col-md-12";
+                                     }
+                                     if (item.type.abreviation == "annul") {
+                                         divtr.className = "testannul col-md-12";
+                                     }
+
+
+                                     var trl1t = document.createElement('div');
+                                     trl1t.className = "col-md-9";
+                                     trl1t.innerHTML = "type Transaction:" + item.type.designiation;
+                                     divtr.append(trl1t);
+                                     var trl1m = document.createElement('div');
+                                     trl1m.className = "col-md-3";
+                                     trl1m.innerHTML = "Montant:" + item.montant + "DT";
+                                     divtr.append(trl1m);
+                                     var trl2c = document.createElement('div');
+                                     trl2c.className = "col-md-3";
+                                     trl2c.innerHTML = "Num Carte:" + item.carte.num_carte;
+                                     divtr.append(trl2c);
+                                     var trl2cin = document.createElement('div');
+                                     trl2cin.className = "col-md-3";
+                                     trl2cin.innerHTML = "Cin:" + item.carte.cin;
+                                     divtr.append(trl2cin);
+                                     var trl2n = document.createElement('div');
+                                     trl2n.className = "col-md-3";
+                                     trl2n.innerHTML = "nom:" + item.carte.nom_porteur;
+                                     divtr.append(trl2n);
+                                     var trl2p = document.createElement('div');
+                                     trl2p.className = "col-md-3";
+                                     trl2p.innerHTML = "prenom:" + item.carte.prenom_porteur;
+                                     divtr.append(trl2p);
+                                     var trl3d = document.createElement('div');
+                                     trl3d.className = "col-md-3";
+                                     trl3d.innerHTML = "Date:" + item.date.date.substring(0, 10);
+                                     divtr.append(trl3d);
+                                     var trl3h = document.createElement('div');
+                                     trl3h.className = "col-md-3";
+                                     trl3h.innerHTML = "Heure:" + item.heure.date.substring(11, 19);
+                                     divtr.append(trl3h);
+                                     var trl3t = document.createElement('div');
+                                     trl3t.className = "col-md-3";
+                                     trl3t.innerHTML = "Num Ticket:" + item.num_ticket;
+                                     divtr.append(trl3t);
+                                     var trl3n = document.createElement('div');
+                                     trl3n.className = "col-md-3";
+                                     trl3n.innerHTML = "NS TPE:" + item.tpe.num_serie;
+                                     divtr.append(trl3n);
+                                     var trl4a = document.createElement('div');
+                                     trl4a.className = "col-md-3";
+                                     trl4a.innerHTML = "Adress:" + item.station.adress;
+                                     divtr.append(trl4a);
+                                     var trl4t = document.createElement('div');
+                                     trl4t.className = "col-md-3";
+                                     trl4t.innerHTML = "tel:" + item.station.fax;
+                                     divtr.append(trl4t);
+                                     var trl4s = document.createElement('div');
+                                     trl4s.className = "col-md-3";
+                                     trl4s.innerHTML = "Client:" + item.client.designation;
+                                     divtr.append(trl4s);
+                                     var trl4as = document.createElement('div');
+                                     trl4as.className = "col-md-3";
+                                     trl4as.innerHTML = "Adress:" + item.client.adress;
+                                     divtr.append(trl4as);
+                                     $(".loading").hide();
+                                     divtrs.append(divtr);
+
+
+                                 });
+                             }
+
+                        }
+                    });
+
+                },
+                events: data
+            });
+
+            // FIX INPUTS TO BOOTSTRAP VERSIONS
+            var $calendarButtons = $calendar.find('.fc-header-right > span');
+            $calendarButtons
+                .filter('.fc-button-prev, .fc-button-today, .fc-button-next')
+                .wrapAll('<div class="btn-group mt-sm mr-md mb-sm ml-sm"></div>')
+                .parent()
+                .after('<br class="hidden"/>');
+
+            $calendarButtons
+                .not('.fc-button-prev, .fc-button-today, .fc-button-next')
+                .wrapAll('<div class="btn-group mb-sm mt-sm"></div>');
+
+            $calendarButtons
+                .attr({'class': 'btn btn-sm btn-default'});
+        };
+
+
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        var data = [
+
+            {% for i in 0..daysStat|length-1 %}
+            {
+                title: 'nbr de transaction:{{ daysStat[i][2] }}',
+                start: '{{daysStat[i]['date']|date('Y-m-d')}}'
+
+
+
+
+            },
+            {
+                title: 'chiffre d affaire: {{ daysStat[i][1] }}DT',
+                start: '{{daysStat[i]['date']|date('Y-m-d')}}',
+                backgroundColor:'#e60000'
+            }
+            {% if i!=daysStat|length-1 %}
+            ,
+            {% endif %}
+            {% endfor %}
+        ];
+        initCalendar(data);
+
+        $("#btfilter").click(function () {
+
+            $('.trans').modal('show');
+            $(".loading").show();
+            $("#trs").empty();
+            var dstart=$('#start').val();
+            var dend=$('#end').val();
+            $("#total").empty();
+
+            $.ajax({
+                type: "POST",
+                url: "{{ path('transaction_GDaterange')}}",
+                cache: false,
+                data:{start: dstart,end:dend,id_station:{{ idstation}}},
+                success: function(rep){
+                    var divtrs=document.getElementById('trs');
+                    var cafilter=0;
+                    var nbrtrsfilter=0;
+                    if (rep=="[]")
+                    {
+                        $(".loading").hide();
+                        var nodata=document.createElement('div');
+                        nodata.className="col-md-12 nodata";
+                        nodata.innerHTML= "Pas de transactions du: "+ dstart+" jusqu'a: "+dend;
+                        divtrs.append(nodata);
+                    }
+                    else {
+
+                        $.each(JSON.parse(rep), function (i, item) {
+                            cafilter += item.montant;
+                            nbrtrsfilter += 1;
+                            var divtr = document.createElement('div');
+                            if (item.type.abreviation == "recharge") {
+                                divtr.className = "testrecharge col-md-12";
+                            }
+                            if (item.type.abreviation == "trft") {
+                                divtr.className = "testtrfrt col-md-12";
+                            }
+                            if (item.type.abreviation == "ach") {
+                                divtr.className = "testachat col-md-12";
+                            }
+                            if (item.type.abreviation == "annul") {
+                                divtr.className = "testannul col-md-12";
+                            }
+
+
+                            var trl1t = document.createElement('div');
+                            trl1t.className = "col-md-9";
+                            trl1t.innerHTML = "type Transaction:" + item.type.designiation;
+                            divtr.append(trl1t);
+                            var trl1m = document.createElement('div');
+                            trl1m.className = "col-md-3";
+                            trl1m.innerHTML = "Montant:" + item.montant + "DT";
+                            divtr.append(trl1m);
+                            var trl2c = document.createElement('div');
+                            trl2c.className = "col-md-3";
+                            trl2c.innerHTML = "Num Carte:" + item.carte.num_carte;
+                            divtr.append(trl2c);
+                            var trl2cin = document.createElement('div');
+                            trl2cin.className = "col-md-3";
+                            trl2cin.innerHTML = "Cin:" + item.carte.cin;
+                            divtr.append(trl2cin);
+                            var trl2n = document.createElement('div');
+                            trl2n.className = "col-md-3";
+                            trl2n.innerHTML = "nom:" + item.carte.nom_porteur;
+                            divtr.append(trl2n);
+                            var trl2p = document.createElement('div');
+                            trl2p.className = "col-md-3";
+                            trl2p.innerHTML = "prenom:" + item.carte.prenom_porteur;
+                            divtr.append(trl2p);
+                            var trl3d = document.createElement('div');
+                            trl3d.className = "col-md-3";
+                            trl3d.innerHTML = "Date:" + item.date.date.substring(0, 10);
+                            divtr.append(trl3d);
+                            var trl3h = document.createElement('div');
+                            trl3h.className = "col-md-3";
+                            trl3h.innerHTML = "Heure:" + item.heure.date.substring(11, 19);
+                            divtr.append(trl3h);
+                            var trl3t = document.createElement('div');
+                            trl3t.className = "col-md-3";
+                            trl3t.innerHTML = "Num Ticket:" + item.num_ticket;
+                            divtr.append(trl3t);
+                            var trl3n = document.createElement('div');
+                            trl3n.className = "col-md-3";
+                            trl3n.innerHTML = "NS TPE:" + item.tpe.num_serie;
+                            divtr.append(trl3n);
+                            var trl4a = document.createElement('div');
+                            trl4a.className = "col-md-3";
+                            trl4a.innerHTML = "Adress:" + item.station.adress;
+                            divtr.append(trl4a);
+                            var trl4t = document.createElement('div');
+                            trl4t.className = "col-md-3";
+                            trl4t.innerHTML = "tel:" + item.station.fax;
+                            divtr.append(trl4t);
+                            var trl4s = document.createElement('div');
+                            trl4s.className = "col-md-3";
+                            trl4s.innerHTML = "Montant:" + item.client.designation;
+                            divtr.append(trl4s);
+                            var trl4as = document.createElement('div');
+                            trl4as.className = "col-md-3";
+                            trl4as.innerHTML = "Adress:" + item.client.adress;
+                            divtr.append(trl4as);
+                            divtrs.append(divtr);
+
+
+                        });
+
+                        $(".loading").hide();
+
+                        var total = document.getElementById('total');
+
+                        var total_modal = document.createElement('div');
+                        total_modal.className = "row";
+                        var nbrtrs = document.createElement('div');
+                        nbrtrs.className = "col-md-6 nbrtrs";
+                        nbrtrs.innerHTML = "nombre total des transactions: " + nbrtrsfilter;
+                        total_modal.append(nbrtrs);
+                        var ca = document.createElement('div');
+                        ca.className = "col-md-6 ca";
+                        ca.innerHTML = "chiffre d'affaire: " + cafilter + "DT";
+                        total_modal.append(ca);
+                        total.append(total_modal);
+                    }
+                }
+            });
+        });
+    });
+
+
+</script>
+
+</section>
+</body>
+</html>

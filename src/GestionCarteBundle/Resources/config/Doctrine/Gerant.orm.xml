@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionCarteBundle\Entity\Gerant" repository-class="GestionCarteBundle\Repository\GerantRepository">
+        <id name="id_gerant" type="integer"  column="id_gerant">
+
+        </id>
+
+
+
+
+        <one-to-one field="compte_carte_gerant" target-entity="GestionAccesBundle\Entity\Utilisateur" mapped-by="compte_gerant" />
+
+        <one-to-many
+                field="stations"
+                target-entity="GestionCarteBundle\Entity\Station"
+                mapped-by="gerant" />
+
+    </entity>
+
+</doctrine-mapping>

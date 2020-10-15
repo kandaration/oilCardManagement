@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionCarteBundle\Entity\Carte" repository-class="GestionCarteBundle\Repository\CarteRepository">
+        <id name="num_carte" type="string" length="100" column="num_carte">
+
+        </id>
+
+        <field name="nom_porteur" column="nom_porteur" type="string" length="100" nullable="false"  />
+        <field name="prenom_porteur" column="prenom_porteur" type="string" length="100"  nullable="false"  />
+        <field name="cin" column="cin" type="string"   length="8" nullable="false" unique="true"  />
+        <field name="Code" column="Code" type="string"   length="4" nullable="true" unique="true"  />
+        <field name="solde" column="solde" type="float"  nullable="false"  />
+        <field name="num_supcarte" column="num_supcarte" type="string" length="100"  nullable="true"  />
+        <field name="etat" column="etat" type="string" length="20"  nullable="false"  />
+        <field name="plafond" column="plafond" type="integer"   nullable="false"  />
+
+        <one-to-one field="usercarte" target-entity="GestionAccesBundle\Entity\Utilisateur" mapped-by="carte" />
+
+
+        <one-to-many
+                field="transactions"
+                target-entity="GestionTransactionBundle\Entity\Transaction"
+                mapped-by="carte" />
+
+        <many-to-one
+                field="client"
+                target-entity="GestionCarteBundle\Entity\Client"
+                inversed-by="cartes"
+        >
+
+            <join-column name="id_client" referenced-column-name="id_client" />
+        </many-to-one>
+
+
+    </entity>
+  
+</doctrine-mapping>

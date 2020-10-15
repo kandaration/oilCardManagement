@@ -1,0 +1,387 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Menu Collapsed Layout | Okler Themes | Porto-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template"/>
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/bootstrap/css/bootstrap.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/font-awesome/css/font-awesome.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/magnific-popup/magnific-popup.css") }}'/>
+    <link rel="stylesheet" href='{{ asset("Tamplate/vendor/bootstrap-datepicker/css/datepicker3.css") }}'/>
+
+    <!-- ThemeCSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/theme.css") }}'/>
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/skins/default.css") }}'/>
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href='{{ asset("Tamplate/stylesheets/theme-custom.css") }}'/>
+
+    <!-- Head Libs -->
+    <script src={{ asset("Tamplate/vendor/modernizr/modernizr.js") }}></script>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+<section class="body">
+
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../" class="logo">
+                <img src={{ asset("Tamplate/images/carte-carburant.jpg") }} height="100" alt="Porto Admin"
+                     style="margin-left: -15px;margin-top: -25px;"/>
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+                 data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div ><h2><B>Protail</B> <em>Gestion Cartes Pétrolières</em></h2></div>
+
+        <!-- start: search & user box -->
+        <div class="header-right" style="margin-top: -65px;">
+
+
+            <span class="separator"></span>
+
+            {{ block("userbox","::userbox.html.twig") }}
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+
+        {{ block("sidebar","::menu.html.twig") }}
+
+
+        <!-- end: sidebar -->
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2 style="margin-left: 40px;">Timeline</h2>
+
+            </header>
+
+            <!-- start: page -->
+            <form name="xxx" id="xxx" class="form-horizontal mb-lg" action="{{ path('transaction_historique') }}"
+                  method="POST">
+                <div class="row">
+                    <div class="col-md-7">{% if daterange is defined %}<h2>{{ daterange }}</h2> {% endif %}</div>
+                    <div class="input-daterange input-group col-md-5" data-plugin-datepicker>
+														<span class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</span>
+                        <input type="text" class="form-control" name="start" id="start">
+                        <span class="input-group-addon">to</span>
+                        <input type="text" class="form-control" name="end" id="end">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-11"></div>
+                        <div class="col-md-1">
+                            <button type="submit" id="addToTable" class="btn btn-primary">Filtrer</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="row">
+                <div class="timeline">
+                    <div class="tm-body">
+                        {% set mois="" %}
+                        {% set i=0 %}
+                        {% for transaction in transactions %}
+                        {% if (mois!= transaction.date|date('F')) %}
+                        {% if (mois!="") %}
+                           </ol>
+                        {% endif %}
+                        <div class="tm-title">
+                            <h3 class="h5 text-uppercase">{{ transaction.date|date('F  Y') }}</h3>
+                        </div>
+                        <ol class="tm-items">
+                            {% set  mois=transaction.date|date('F') %}
+                            {% endif %}
+                            <li>
+                                <div class="tm-info" >
+                                    <div class="tm-icon"><i class="fa fa-star"></i></div>
+                                    <time class="tm-datetime">
+                                        <div class="tm-datetime-date">{{ transaction.heure|date('H:m') }}</div>
+                                        <div class="tm-datetime-time">{{ transaction.date|date('d/m') }}</div>
+                                    </time>
+                                </div>
+                                <div class="tm-box appear-animation resize-popup" data-appear-animation="fadeInRight"
+                                     data-appear-animation-delay="100" style="background-color:white">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <font size="3vw"> Numéro carte: {{ transaction.carte.numCarte }}</font>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <font size="3vw">Solde carte après tansaction:{{ transaction.solde }}
+                                                DT</font>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <font size="7vw" color="#ff7f50">  {{ transaction.montant }}DT </font>
+                                            <font size="3vw" >  achat </font>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <font size="3vw">Adress station: {{ transaction.station.adress }}</font>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <font size="3vw">Fax/Tel: {{ transaction.station.fax }}</font>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="map{{ i }}" class="map"style="width: 1150px; height: 200px" ></div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </li>
+                            {% set i=i+1 %}
+
+                            {% endfor %}
+                        </ol>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg") }} alt="Joseph_Doe"
+                                         class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+</section>
+<!-- Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery/jquery.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js") }}></script>
+<script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js") }}></script>
+<script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js") }}></script>
+
+<!-- Specific Page Vendor -->
+
+
+<script src={{ asset("Tamplate/vendor/jquery-appear/jquery.appear.js") }}></script>
+<script
+
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9rDza-dqwgPv09wI8eQRnzLAUYgC0DRk"></script>
+<script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
+<!--<script src={{ asset("Tamplate/vendor/gmaps/gmaps.js") }}></script>-->
+<script src={{ asset("Tamplate/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js") }}></script>
+<script src={{ asset("Tamplate/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js") }}></script>
+<script src={{ asset("Tamplate/vendor/select2/select2.js") }}></script>
+
+<script src={{ asset("Tamplate/vendor/jquery-maskedinput/jquery.maskedinput.js") }}></script>
+
+<script src={{ asset("Tamplate/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js") }}></script>
+<script src={{ asset("Tamplate/vendor/fuelux/js/spinner.js") }}></script>
+<script src={{ asset("Tamplate/vendor/dropzone/dropzone.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/markdown.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/to-markdown.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/bootstrap-markdown.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/lib/codemirror.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/addon/selection/active-line.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/addon/edit/matchbrackets.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/javascript/javascript.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/xml/xml.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/htmlmixed/htmlmixed.js") }}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/css/css.js") }}></script>
+<script src={{ asset("Tamplate/vendor/summernote/summernote.js") }}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-maxlength/bootstrap-maxlength.js") }}></script>
+<script src={{ asset("Tamplate/vendor/ios7-switch/ios7-switch.js") }}></script>
+
+
+<script>
+    $.fn.datepicker.defaults.format = "dd/mm/yyyy";
+</script>
+<!-- Theme Base, Components and Settings -->
+<script src={{ asset("Tamplate/javascripts/theme.js") }}></script>
+
+<!-- Theme Custom -->
+<script src={{ asset("Tamplate/javascripts/theme.custom.js") }}></script>
+
+<!-- Theme Initialization Files -->
+<script src={{ asset("Tamplate/javascripts/theme.init.js") }}></script>
+
+<!-- Examples -->
+
+<script src={{ asset("Tamplate/javascripts/pages/examples.timeline.js") }}></script>
+<script src={{ asset("Tamplate/javascripts/forms/examples.advanced.form.js") }}></script>
+<script>
+
+    $(document).ready(function () {
+        var mapsArray=  [];
+
+
+       /* $('.resize-popup').click(function () {
+              console.log("here");
+            $(this).children(".panel-body").show();
+            $('.resize-popup').children(".panel-body").children(".map").show();
+            $(this).children(".panel-body").children(".map").animate({
+                height: "350px"
+            }, 500); // how
+
+            $(this).children(".panel-body").children(".map").width("800px")
+                .height("300px")
+                .gmap3({trigger:"resize"});
+
+
+
+
+
+
+        });*/
+
+
+
+
+
+
+        {% set i=0 %}
+        {% for transaction in transactions %}
+       /* $('#map{{ i }}').gmap3({
+            marker:{
+                latLng: ["-29.165708760531277", "-51.51253212137226"],
+                draggable:true
+            },
+            map:{
+                options:{
+                    zoom: 16,
+                    mapTypeId:google.maps.MapTypeId.HYBRID,
+                }
+            }
+        });*/
+        $('#map{{i}}')
+            .gmap3({
+                center: [{{ transaction.station.latitude }},{{ transaction.station.longitude }}],
+                zoom: 16,
+
+            })
+            .marker({
+                position: [{{ transaction.station.latitude }},{{ transaction.station.longitude }}],
+            });
+
+
+        {% set i=i+1 %}
+        {% endfor %}
+        //$('.resize-popup').children(".panel-body").children(".map").hide();
+    });
+
+
+</script>
+
+</body>
+</html>

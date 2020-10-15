@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="gestion_station_homepage" path="/" methods="GET">
+        <default key="_controller">GestionCarteBundle:GestionStation:index</default>
+    </route>
+
+    <route id="gestion_station_trshift" path="/trshift" methods="POST|GET">
+        <default key="_controller">GestionCarteBundle:GestionStation:Trshift</default>
+    </route>
+    <route id="gestion_station_ToDayStat" path="/stat" methods="POST|GET">
+        <default key="_controller">GestionCarteBundle:GestionStation:ToDayStat</default>
+    </route>
+</routes>

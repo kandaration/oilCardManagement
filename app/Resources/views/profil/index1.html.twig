@@ -1,0 +1,447 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Menu Collapsed Layout | Okler Themes | Porto-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/bootstrap/css/bootstrap.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/font-awesome/css/font-awesome.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/bootstrap-datepicker/css/datepicker3.css")}} />
+
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/select2/select2.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/jquery-datatables-bs3/assets/css/datatables.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/pnotify/pnotify.custom.css")}} />
+    <!-- ThemeCSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/theme.css")}} />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/skins/default.css")}} />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/theme-custom.css")}} />
+
+    <!-- Head Libs -->
+    <script src={{ asset("Tamplate/vendor/modernizr/modernizr.js")}}></script>
+
+
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../" class="logo">
+                <img src={{ asset("Tamplate/images/carte-carburant.jpg")}} height="100" alt="Porto Admin" style="margin-left: -15px;margin-top: -25px;" />
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div ><h2><B>Protail</B> <em>Gestion Cartes Pétrolières</em></h2></div>
+        <!-- start: search & user box -->
+        <div class="header-right" style="margin-top: -65px;">
+
+
+            <span class="separator"></span>
+
+            {{ block("userbox","::userbox.html.twig") }}
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        {{ block("sidebar","::menu.html.twig") }}
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2 style="margin-left: 40px;">  Gestion Fonctionalités</h2>
+
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.html">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Layouts</span></li>
+                        <li><span>Menu Collapsed</span></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+            <section class="panel">
+                <header class="panel-heading">
+                    <div class="panel-actions">
+                        <a href="#" class="fa fa-caret-down"></a>
+                        <a href="#" class="fa fa-times"></a>
+                    </div>
+
+                    <h2 class="panel-title">Liste Profils</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-md">
+                                <a href="#modalFormadd" class="modal-with-form on-default edit-row"> <button id="addToTable" class="btn btn-primary" >Add <i class="fa fa-plus"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                        <thead>
+                        <tr>
+                            <th>Id_Profil</th>
+                            <th>Nom_Profil</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for profil in profils %}
+                        <tr>
+                            <td><a href="{{ path('profil_show', { 'id': profil.idProfil}) }}">{{ profil.idProfil }}</a></td>
+                            <td>{{ profil.nomProfil }}</td>
+                            <td class="actions">
+                                <a href="#modalForm" class="modal-with-form on-default edit-row"><i id="modif" class="fa fa-pencil" onclick="update('{{ profil.nomProfil }}','{{ profil.description }}','{{ profil.idProfil}}')" ></i></a>
+                                <a href="{{ path('profil_delete', { 'id': profil.idProfil  }) }}" class=" on-default remove-row"><i class="fa fa-trash-o"></i></a>
+
+                            </td>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+
+            <!-- Modal Form -->
+            <div id="modalForm" class="modal-block modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title"> <i class="fa fa-pencil"></i> Modifer Profil</h2>
+                    </header>
+                    <div class="panel-body">
+                        <form  name="xxx" id="xxx"  class="form-horizontal mb-lg"   method="POST">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputRounded"><B>Nom Profil</B></label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-rounded" id="Tprofil" name="Tprofil" enabled="false" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputRounded"><B>Description</B></label>
+                                <div class="col-md-4">
+                                    <textarea name="Tdesc" id="Tdesc" rows="10" cols="50"></textarea>
+                                </div>
+                            </div>
+
+
+                            <footer class="panel-footer">
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <button onclick="form_submitmodif()" class="btn btn-primary modal-confirm">Modifier</button>
+                                        <button class="btn btn-default modal-dismiss">Annuler</button>
+                                    </div>
+                                </div>
+                            </footer>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Modal Form -->
+            <div id="modalFormadd" class="modal-block modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title"> <i class="fa fa-plus"></i> Ajouter Profil</h2>
+                    </header>
+                    <div class="panel-body">
+                        <form  name="xxx" id="xxx"  class="form-horizontal mb-lg" action="{{ path('profil_new') }}"  method="POST">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputRounded"><B>Nom Profil</B></label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-rounded" id="Tprofiladd" name="Tprofiladd" enabled="false" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputRounded"><B>Description</B></label>
+                                <div class="col-md-4">
+                                    <textarea name="Tdescadd" id="Tdescadd" rows="10" cols="50"></textarea>
+                                </div>
+                            </div>
+
+
+                            <footer class="panel-footer">
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <button onclick="form_submitadd()" class="btn btn-primary modal-confirm">Ajouter</button>
+                                        <button class="btn btn-default modal-dismiss">Annuler</button>
+                                    </div>
+                                </div>
+                            </footer>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark" ></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+</section>
+
+<div id="dialog" class="modal-block mfp-hide">
+    <section class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-title">Are you sure?</h2>
+        </header>
+        <div class="panel-body">
+            <div class="modal-wrapper">
+                <div class="modal-text">
+                    <p>Are you sure that you want to delete this row?</p>
+                </div>
+            </div>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button id="dialogConfirm" class="btn btn-primary">Confirm</button>
+                    <button id="dialogCancel" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+
+
+<!-- Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery/jquery.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js")}}></script>
+<script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js")}}></script>
+<script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js")}}></script>
+
+<script>
+    function update(nom,description,id) {
+
+        document.getElementById("Tprofil").value=nom;
+        document.getElementById("Tdesc").value=description;
+
+        document.getElementById("xxx").setAttribute("action","/CartePetroliere/web/app_dev.php/profil/"+id+"/edit");
+    }
+    function form_submitadd() {
+        if($("#Tprofiladd").val()=="")
+        {
+            alert("profil est obligatoire");
+        }
+        else if($("#Tdescadd").val()=="")
+        {
+            alert("description est obligatoire");
+        }
+        else
+        { document.getElementById("xxx").submit();}
+    }
+    function form_submitmodif() {
+        if($("#Tprofil").val()=="")
+        {
+            alert("profil est obligatoire");
+        }
+        else if($("#Tdesc").val()=="")
+        {
+            alert("description est obligatoire");
+        }
+        else
+        { document.getElementById("xxx").submit();}
+    }
+</script>
+
+<script>
+
+    //  $.fn.datepicker.defaults.format = "dd/mm/yyyy";
+
+    /* $(document).ready(function() {
+
+     $('#modalForm').modal('show');
+
+     $('#modalForm').on('shown', function() {
+
+     $("#date_naissance").focus();
+
+     })
+
+     });
+
+
+     $('#modalForm').on('shown.bs.modal', function() {
+
+     $("#date_naissance").focus();
+
+     })
+     */
+    /* $('#date_naissance').datepicker(options).on(
+     'show', function() {
+     var modal = $('#date_naissance').closest('.modal');
+     var datePicker = $('body').find('.datepicker');
+     if(!modal.length) {
+     $(datePicker).css('z-index', 'auto');
+     return;
+     }
+     var zIndexModal = $(modal).css('z-index');
+     $(datePicker).css('z-index', zIndexModal + 1);
+     });*/
+    /* $('.datepicker').datepicker({
+     beforeShow: function() {
+     $(this).css("z-index","1050");
+     }
+     });*/
+
+    $(document).ready(function(){
+        $("#date_naissance").datepicker().focus();
+    });
+
+
+
+
+
+</script>
+<!-- Specific Page Vendor -->
+<script src={{ asset("Tamplate/vendor/select2/select2.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-datatables/media/js/jquery.dataTables.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-datatables-bs3/assets/js/datatables.js")}}></script>
+<script src={{ asset("Tamplate/vendor/pnotify/pnotify.custom.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js")}}></script>
+<script src={{ asset("Tamplate/vendor/select2/select2.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-multiselect/bootstrap-multiselect.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-maskedinput/jquery.maskedinput.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js")}}></script>
+<script src={{ asset("Tamplate/vendor/fuelux/js/spinner.js")}}></script>
+<script src={{ asset("Tamplate/vendor/dropzone/dropzone.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/markdown.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/to-markdown.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-markdown/js/bootstrap-markdown.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/lib/codemirror.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/addon/selection/active-line.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/addon/edit/matchbrackets.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/javascript/javascript.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/xml/xml.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/htmlmixed/htmlmixed.js")}}></script>
+<script src={{ asset("Tamplate/vendor/codemirror/mode/css/css.js")}}></script>
+<script src={{ asset("Tamplate/vendor/summernote/summernote.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-maxlength/bootstrap-maxlength.js")}}></script>
+<script src={{ asset("Tamplate/vendor/ios7-switch/ios7-switch.js")}}></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src={{ asset("Tamplate/javascripts/theme.js")}}></script>
+
+<!-- Theme Custom -->
+<script src={{ asset("Tamplate/javascripts/theme.custom.js")}}></script>
+
+<!-- Theme Initialization Files -->
+<script src={{ asset("Tamplate/javascripts/theme.init.js")}}></script>
+<!-- Examples -->
+<script src={{ asset("Tamplate/javascripts/tables/examples.datatables.default.js")}}></script>
+<script src={{ asset("Tamplate/javascripts/ui-elements/examples.modals.js")}}></script>
+<script src={{ asset("Tamplate/javascripts/forms/examples.advanced.form.js")}} ></script>
+
+
+</body>
+</html>

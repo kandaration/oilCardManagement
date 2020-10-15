@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Profilutilisateurs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id_puser</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for profilUtilisateur in profilUtilisateurs %}
+            <tr>
+                <td><a href="{{ path('profiluser_show', { 'id': profilUtilisateur.id_PUser }) }}">{{ profilUtilisateur.idPUser }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('profiluser_show', { 'id': profilUtilisateur.id_PUser }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('profiluser_edit', { 'id': profilUtilisateur.id_PUser }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('profiluser_new') }}">Create a new profilUtilisateur</a>
+        </li>
+    </ul>
+{% endblock %}

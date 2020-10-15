@@ -1,0 +1,19 @@
+gestion_acces:
+    resource: "@GestionAccesBundle/Resources/config/routing.xml"
+    prefix:   /
+gestion_acces_utilisateur:
+    resource: "@GestionAccesBundle/Resources/config/routing/utilisateur.xml"
+    prefix:   /utilisateur
+
+gestion_acces_fonctionalite:
+    resource: "@GestionAccesBundle/Resources/config/routing/Fonctionalites.xml"
+    prefix:   /fonctionalite
+gestion_acces_profil:
+    resource: "@GestionAccesBundle/Resources/config/routing/profil.xml"
+    prefix:   /profil
+gestion_acces_profilfn:
+    resource: "@GestionAccesBundle/Resources/config/routing/profil_fn.xml"
+    prefix:   /profilfn
+gestion_acces_profiluser:
+        resource: "@GestionAccesBundle/Resources/config/routing/profilutilisateur.xml"
+        prefix:   /profiluser

@@ -1,0 +1,742 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <title>Menu Collapsed Layout | Okler Themes | Porto-Admin</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/bootstrap/css/bootstrap.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/font-awesome/css/font-awesome.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.css")}} />
+    <link rel="stylesheet" href={{ asset("Tamplate/vendor/bootstrap-datepicker/css/datepicker3.css")}} />
+
+
+    <!-- ThemeCSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/theme.css")}} />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/skins/default.css")}} />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href={{ asset("Tamplate/stylesheets/theme-custom.css")}} />
+
+    <!-- Head Libs -->
+    <script src={{ asset("Tamplate/vendor/modernizr/modernizr.js")}}></script>
+
+    <style>
+        .timeline .tm-items > li .tm-box
+        {
+            min-height:130px;
+        }
+        font.police
+        {
+            size:3vw;
+        }
+        font.montant
+        {
+            size:5vw;
+            color: #bf0b01;
+        }
+        .simple-user-list
+        {
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        div.testtrfrtD
+        {
+
+
+            background: #4260db;
+            color: white;
+
+        }
+        div.testachat
+        {
+
+
+            background: #12db68;
+            color: white;
+
+        }
+        div.testannul
+        {
+
+
+            background: #db3b3c;
+            color: white;
+
+        }
+        div.testrecharge
+        {
+
+
+            background: mediumpurple ;
+            color: white;
+
+        }
+        div.testtrfrtC
+        {
+
+
+            background: #dbd52c;
+            color: white;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<section class="body">
+
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="{{ asset(path('projet_homepage')) }}" class="logo">
+                <img src={{ asset("Tamplate/images/carte-carburant.jpg")}} height="100" alt="Porto Admin" style="margin-left: -15px;margin-top: -25px;" />
+            </a>
+
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div ><h2><B>Protail</B> <em>Gestion Cartes Pétrolières</em></h2></div>
+
+        <!-- start: search & user box -->
+        <div class="header-right" style="margin-top: -65px;">
+
+
+
+
+            <span class="separator"></span>
+            {{ block("userbox","::userbox.html.twig") }}
+        </div>
+        <!-- end: search & user box -->
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        {{ block("sidebar","::menu.html.twig") }}
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2 style="margin-left: 40px;"> profil</h2>
+
+
+
+            </header>
+
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-4 col-lg-3">
+
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="thumb-info mb-md">
+                                <img src={{ asset("Tamplate/images/gerant.jpg")}} class="rounded img-responsive">
+                                <div class="thumb-info-title">
+                                    <span class="thumb-info-inner">{{ gerant.prenom}}</span>
+                                    <span class="thumb-info-type">{{ gerant.nom }}</span>
+                                </div>
+                            </div>
+
+                            <div class="widget-toggle-expand mb-md">
+                                <div class="widget-header">
+                                    <h6>Information Profil</h6>
+                                    <div class="widget-toggle">+</div>
+                                </div>
+                                <div class="widget-content-expanded">
+                                    <ul class="simple-todo-list">
+                                        <li>Date naissance: {{ gerant.Date_Naissance|date('d/m/y')  }}</li>
+                                        <li>N°Tel: {{ gerant.tel  }}</li>
+                                        <li>E-mail: {{ gerant.email  }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </section>
+
+
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="#" class="fa fa-caret-down"></a>
+                                <a href="#" class="fa fa-times"></a>
+                            </div>
+
+                            <h2 class="panel-title">
+
+                                <span class="label label-primary label-sm text-normal va-middle mr-sm">{{ nbr_station }}</span>
+                                <span class="va-middle">Station</span>
+                            </h2>
+                        </header>
+                        <div class="panel-body">
+                            <div class="content">
+                                <ul class="simple-user-list">
+                                    <div class="no-matching center-text text-center"> no result matching</div>
+
+                                    {% for station in stations %}
+                                        <li id="{{ station.idStation }}" class="card" style=" height:55px;">
+                                            <figure class="image rounded">
+                                                <img src={{ asset("Tamplate/images/icon_station.png") }}  class="img-circle">
+                                            </figure>
+                                            <span class="title">{{ station.adress }}</span>
+                                            <span class="message truncate">{{ station.fax }}</span>
+                                        </li>
+                                    {% endfor %}
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="input-group input-search">
+                                <input type="text" class="form-control" name="find-stations" id="find-stations" placeholder="Search...">
+                                <span class="input-group-btn">
+											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
+											</button>
+										</span>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                </div>
+                <div class="col-md-8 col-lg-6">
+
+                    <div class="tabs">
+                        <ul class="nav nav-tabs tabs-primary">
+                            <li class="active">
+                                <a href="#overview" data-toggle="tab">Vue d'ensemble</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="row loading" >
+                                <img src="{{asset("Tamplate/images/load shift.gif")}}" style="height:600px; display: block;margin: 0 auto;">
+                            </div>
+                            <div id="overview" class="tab-pane active tmline">
+                                <h4 class="mb-xlg">Timeline</h4>
+
+                                <div class="timeline timeline-simple mt-xlg mb-md">
+                                    <div class="tm-body" id="timelinebody">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="xxx" name="xxx" action="{{ path('transaction_gerant') }}" method="POST">
+
+                                <div class="col-md-7">
+                                    <input type="hidden" name="id" id="id" value={{station_principal.idStation}}>
+                                </div>
+
+                                <div class="text-right">
+                                    <a class="text-uppercase text-muted voirplus" >(Voir Plus)</a>
+                                </div>
+
+
+                            </form>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-3">
+
+                    <h4 class="mb-md">Station Statistique</h4>
+                    <div class="row load-mini" >
+                        <img src="{{asset("Tamplate/images/load-mini-stat.gif")}}" style="height:250px; display: block;margin: 0 auto;">
+                    </div>
+                    <ul class="simple-card-list mb-xlg mini-stat">
+                        <li class="primary">
+                            <h3 id="nbrTr"></h3>
+                            <p>Transactions aujourd'hui.</p>
+                        </li>
+                        <li class="primary" style="background-color:red">
+                            <h3 id="CA"></h3>
+                            <p>Total chiffre d'affaire aujourd'hui</p>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- end: page -->
+        </section>
+    </div>
+
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Upcoming Tasks</h6>
+                        <div data-plugin-datepicker data-plugin-skin="dark" ></div>
+
+                        <ul>
+                            <li>
+                                <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
+                                <span>Company Meeting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget widget-friends">
+                        <h6>Friends</h6>
+                        <ul>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-online">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                            <li class="status-offline">
+                                <figure class="profile-picture">
+                                    <img src={{ asset("Tamplate/images/!sample-user.jpg")}} alt="Joseph_Doe" class="img-circle">
+                                </figure>
+                                <div class="profile-info">
+                                    <span class="name">Joseph Doe Junior</span>
+                                    <span class="title">Hey, how are you?</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+</section>
+
+<div id="dialog" class="odal-block mfp-hide">
+    <section class="panel">
+        <header class="panel-heading">
+            <h2 class="panel-title">Are you sure?</h2>
+        </header>
+        <div class="panel-body">
+            <div class="modal-wrapper">
+                <div class="modal-text">
+                    <p>Are you sure that you want to delete this row?</p>
+                </div>
+            </div>
+        </div>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button id="dialogConfirm" class="btn btn-primary">Confirm</button>
+                    <button id="dialogCancel" class="btn btn-default">Cancel</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+
+<!-- Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery/jquery.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js")}}></script>
+<script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js")}}></script>
+<script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js")}}></script>
+
+
+
+<!-- Specific Page Vendor -->
+<script src={{ asset("Tamplate/vendor/jquery-autosize/jquery.autosize.js")}}></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src={{ asset("Tamplate/javascripts/theme.js")}}></script>
+
+<!-- Theme Custom -->
+<script src={{ asset("Tamplate/javascripts/theme.custom.js")}}></script>
+
+<!-- Theme Initialization Files -->
+<script src={{ asset("Tamplate/javascripts/theme.init.js")}}></script>
+<script src={{ asset("Tamplate/vendor/fullcalendar/lib/moment.min.js") }}></script>
+<script>
+
+
+
+    function Trshift(id_station) {
+        $.ajax({
+            type: "POST",
+            url: "{{ path('gestion_station_trshift') }}",
+            cache: false,
+            data:{id_station:id_station},
+            success: function (rep) {
+                var mois = "";
+                $('#timelinebody').empty();
+                var timelinebody = document.getElementById('timelinebody');
+                $(".loading").hide();
+                $(".tmline").show();
+                $(".load-mini").hide();
+                $(".mini-stat").show();
+
+
+
+                var ol;
+
+                $.each(JSON.parse(rep), function (i, item) {
+                    if ((mois != moment(item.date.date).format('MMMM'))) {
+
+                        ol = document.createElement('ol');
+                        ol.className = "tm-items";
+                        ol.innerHTML = "";
+
+
+                        var title = document.createElement('div');
+                        title.className = "tm-title";
+                        var text = document.createElement('h3');
+                        text.className = "h5 text-uppercase";
+                        text.innerHTML = moment(item.date.date).format('MMMM YYYY');
+                        title.append(text);
+                        timelinebody.append(title);
+                        timelinebody.append(ol);
+
+
+                        mois = moment(item.date.date).format('MMMM');
+
+
+                    }
+                    if (((mois == moment(item.date.date).format('MMMM')))) {
+
+
+                        var tr = document.createElement('li');
+                        var divtr = document.createElement('div');
+
+                        if (item.type.abreviation == "recharge") {
+                            divtr.className = "tm-box testrecharge";
+                        }
+                        if (item.type.abreviation == "trftD") {
+                            divtr.className = "tm-box testtrfrtD";
+                        }
+
+                        if (item.type.abreviation == "trftC") {
+                            divtr.className = "tm-box testtrfrtC";
+                        }
+                        if (item.type.abreviation == "ach") {
+                            divtr.className = "tm-box testachat";
+                        }
+                        if (item.type.abreviation == "annul") {
+                            divtr.className = "tm-box testannul";
+                        }
+
+
+
+                       /* var row1 = document.createElement('div');
+                        row1.className = "row";
+                        var col1 = document.createElement('div');
+                        col1.className = "col-md-4";
+                        var num_carte = document.createElement('font');
+                        num_carte.className = "police";
+                        num_carte.innerHTML = "Num Carte:" + item.carte.num_carte;
+                        col1.append(num_carte);
+                        row1.append(col1);
+
+                        var col2 = document.createElement('div');
+                        col2.className = "col-md-5";
+                        var solde_carte = document.createElement('font');
+                        solde_carte.className = "police";
+                        solde_carte.innerHTML = "Solde carte après tansaction:" + item.solde;
+                        col2.append(solde_carte);
+                        row1.append(col2);
+
+                        var col3 = document.createElement('div');
+                        col3.className = "col-md-3";
+                        var montant_carte = document.createElement('font');
+                        montant_carte.className = "montant";
+                        montant_carte.innerHTML = "montant:" + item.montant + "DT";
+                        col3.append(montant_carte);
+                        row1.append(col3);
+
+                        divtr.append(row1);
+
+                        var row2 = document.createElement('div');
+                        row2.className = "row";
+
+                        var col4 = document.createElement('div');
+                        col4.className = "col-md-4";
+                        var adress = document.createElement('font');
+                        adress.className = "police";
+                        adress.innerHTML = "adress:" + item.station.adress;
+                        col4.append(adress);
+                        row2.append(col4);
+
+                        var col5 = document.createElement('div');
+                        col5.className = "col-md-8";
+                        var tel = document.createElement('font');
+                        tel.className = "police";
+                        tel.innerHTML = "Fax/Tel:" + item.station.fax;
+                        col5.append(tel);
+                        row2.append(col5);*/
+                        var trl1t = document.createElement('div');
+                        trl1t.className = "col-md-9";
+                        trl1t.innerHTML = "type Transaction:" + item.type.designiation;
+                        divtr.append(trl1t);
+                        var trl1m = document.createElement('div');
+                        trl1m.className = "col-md-3";
+                        trl1m.innerHTML = "Montant:" + item.montant + "DT";
+                        divtr.append(trl1m);
+                        var trl2c = document.createElement('div');
+                        trl2c.className = "col-md-3";
+                        trl2c.innerHTML = "Num Carte:" + item.carte.num_carte;
+                        divtr.append(trl2c);
+                        var trl2cin = document.createElement('div');
+                        trl2cin.className = "col-md-3";
+                        trl2cin.innerHTML = "Cin:" + item.carte.cin;
+                        divtr.append(trl2cin);
+                        var trl2n = document.createElement('div');
+                        trl2n.className = "col-md-3";
+                        trl2n.innerHTML = "nom:" + item.carte.nom_porteur;
+                        divtr.append(trl2n);
+                        var trl2p = document.createElement('div');
+                        trl2p.className = "col-md-3";
+                        trl2p.innerHTML = "prenom:" + item.carte.prenom_porteur;
+                        divtr.append(trl2p);
+                        var trl3d = document.createElement('div');
+                        trl3d.className = "col-md-3";
+                        trl3d.innerHTML = "Date:" + item.date.date.substring(0, 10);
+                        divtr.append(trl3d);
+                        var trl3h = document.createElement('div');
+                        trl3h.className = "col-md-3";
+                        trl3h.innerHTML = "Heure:" + item.heure.date.substring(11, 19);
+                        divtr.append(trl3h);
+                        var trl3t = document.createElement('div');
+                        trl3t.className = "col-md-3";
+                        trl3t.innerHTML = "Num Ticket:" + item.num_ticket;
+                        divtr.append(trl3t);
+                        var trl3n = document.createElement('div');
+                        trl3n.className = "col-md-3";
+                        trl3n.innerHTML = "NS TPE:" + item.tpe.num_serie;
+                        divtr.append(trl3n);
+                        var trl4a = document.createElement('div');
+                        trl4a.className = "col-md-3";
+                        trl4a.innerHTML = "Adress:" + item.station.adress;
+                        divtr.append(trl4a);
+                        var trl4t = document.createElement('div');
+                        trl4t.className = "col-md-3";
+                        trl4t.innerHTML = "tel:" + item.station.fax;
+                        divtr.append(trl4t);
+                        var trl4s = document.createElement('div');
+                        trl4s.className = "col-md-3";
+                        trl4s.innerHTML = "Montant:" + item.client.designation;
+                        divtr.append(trl4s);
+                        var trl4as = document.createElement('div');
+                        trl4as.className = "col-md-3";
+                        trl4as.innerHTML = "Adress:" + item.client.adress;
+                        divtr.append(trl4as);
+
+                        tr.append(divtr);
+
+                        ol.append(tr);
+
+
+                    }
+
+                });
+            }
+        });
+    }
+
+    function select_default_carte() {
+        $( ".simple-user-list li" ).each(function( index,element ) {
+
+            if($( elemnt ).id=={{ station_principal.idStation }})
+            {
+                $(element).css('background-color', '#55a2d1cc')
+            }
+
+
+
+        });
+
+    }
+
+
+    $(document).ready(function () {
+        $( ".no-matching" ).hide();
+        $(".tmline").hide();
+        $(".mini-stat").hide();
+        $('#find-stations').on("input",function(e){
+            if($(this).data("lastval")!= $(this).val()){
+                $(this).data("lastval",$(this).val());
+                //change action
+                var text=$(this).val();
+                //alert($(this).val());
+                var i=0;
+                $( ".simple-user-list li" ).each(function( index,element ) {
+                    // if (element.)
+                    //console.log( $(element).children(".title").text() );
+                    // console.log(element);
+                    var el=element;
+                    //var tos=;
+
+                    // console.log("*****" +$( element ).children(".title").text().search(text));
+                    if (($( element ).children(".title").text().search(text))>-1){
+                        // console.log( el );
+                        $(el).show();
+                        i++;
+                    }else {
+                        $(el).hide();
+                    }
+
+
+                });
+                if (i==0){
+                    $( ".no-matching" ).show();
+                }else{
+                    $( ".no-matching" ).hide();
+
+                }
+
+
+            }
+        });
+        $( ".simple-user-list li" ).each(function( index,element ) {
+
+            if($( element ).attr('id')=={{station_principal.idStation}})
+                $( element ).css('background-color', '#55a2d1cc')
+
+
+
+
+        });
+        Trshift({{station_principal.idStation}});
+
+        $.ajax({
+            type: "POST",
+            url: "{{ path('gestion_station_ToDayStat') }}",
+            cache: false,
+            data: {id_station: {{station_principal.idStation }}},
+            success: function (rep) {
+                $.each(JSON.parse(rep), function (i, item) {
+
+
+                    if(item[1]==null)
+                    {
+                        $('#nbrTr').html('N/A');
+                        $('#CA').html('N/A'+"DT");
+                    }
+                    else
+                    {
+                        $('#nbrTr').html(item[2]);
+                        $('#CA').html(item[1]+"DT");
+                    }
+
+                });
+
+
+            }
+        });
+
+
+
+        $(".card").click(function() {
+
+            $( ".simple-user-list li" ).each(function( index,element ) {
+
+                $( element ).css('background-color', '#00000')
+
+
+
+
+            });
+            $(".loading").show();
+            $(".tmline").hide();
+            $(".load-mini").show();
+            $(".mini-stat").hide();
+            $(this).css('background-color', '#55a2d1cc');
+            $("#id").val($(this).attr('id'));
+            Trshift($(this).attr('id'));
+
+            $.ajax({
+                type: "POST",
+                url: "{{ path('gestion_station_ToDayStat') }}",
+                cache: false,
+                data: {id_station: $(this).attr('id')},
+                success: function (rep) {
+
+                    $.each(JSON.parse(rep), function (i, item) {
+
+
+                        if(item[1]==null)
+                        {
+                            $('#nbrTr').html('N/A');
+                            $('#CA').html('N/A'+"DT");
+                        }
+                        else
+                        {
+                            $('#nbrTr').html(item[2]);
+                            $('#CA').html(item[1]+" DT");
+                        }
+
+                    });
+
+
+                }
+            });
+
+
+        });
+       $(".voirplus").click(function () {
+              $('#xxx').submit();
+       });
+    });
+
+</script>
+
+</body>
+</html>

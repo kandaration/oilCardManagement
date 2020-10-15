@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fond extensible - version CSS</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+
+    <style>
+        html {
+            margin:0;
+            padding:0;
+            background: url({{asset("Tamplate/images/acceuil.jpg")}}) no-repeat center fixed;
+            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+            background-size: cover; /* version standardisée */
+        }
+    </style>
+</head>
+<body>
+<a href="{{ path('utilisateur_cnx') }}">
+    <img style="border-radius: 270px;height: 300px;margin-left: 261px;margin-top: 180px;border: 10px solid;border-color: #ff8309;" src="{{asset("Tamplate/images/worker.jpeg")}}" >
+    <h3 id="gerant" style="color:white;margin-left: -707px;margin-top: -416px;font-size: 81px;">Gérant</h3>
+</a>
+
+<a href="{{ path('utilisateur_cnx') }}" >
+<img style="border-radius: 270px;height: 300px;margin-top: -122px;border: 10px solid;border-color: #ff8309;margin-left: 859px;" src="{{asset("Tamplate/images/boss.jpeg")}}" >
+
+    <h3 id="client" style="color: white; margin-left: 521px; margin-top: -420px; font-size: 81px; position: relative; visibility: visible; height: 127.333px;">Client</h3>
+</a>
+<a href="{{ path('utilisateur_cnx') }}" >
+<h4 style="margin-left: 1435px;margin-top: 450px; color:white">Admin</h4>
+</a>
+
+<script src={{ asset("Tamplate/vendor/jquery/jquery.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-browser-mobile/jquery.browser.mobile.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap/js/bootstrap.js")}}></script>
+<script src={{ asset("Tamplate/vendor/nanoscroller/nanoscroller.js")}}></script>
+<script src={{ asset("Tamplate/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js")}}></script>
+<script src={{ asset("Tamplate/vendor/magnific-popup/magnific-popup.js")}}></script>
+<script src={{ asset("Tamplate/vendor/jquery-placeholder/jquery.placeholder.js")}}></script>
+<script src={{ asset("Tamplate/javascripts/circletype.js")}}></script>
+<script src={{ asset("Tamplate/javascripts/FitText.js")}}></script>
+<script src={{ asset("Tamplate/javascripts/Lettering.js")}}></script>
+
+
+<script>
+    $(document).ready(function() {
+
+        $('#gerant').circleType({radius: 250});
+        $('#client').circleType({radius: 250});
+    });
+</script>
+
+</body>
+</html>

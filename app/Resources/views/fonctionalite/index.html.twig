@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fonctionalites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom_fn</th>
+                <th>Description</th>
+                <th>Id_fn</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fonctionalite in fonctionalites %}
+            <tr>
+                <td><a href="{{ path('fonctionalite_show', { 'id': fonctionalite.idFN }) }}">{{ fonctionalite.nomFN }}</a></td>
+                <td>{{ fonctionalite.description }}</td>
+                <td>{{ fonctionalite.idFN }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('fonctionalite_show', { 'id': fonctionalite.idFN }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fonctionalite_edit', { 'id': fonctionalite.idFN }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fonctionalite_new') }}">Create a new fonctionalite</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="GestionTransactionBundle\Entity\Terminal" repository-class="GestionTransactionBundle\Repository\TerminalRepository">
+        <id name="id_terminal" type="integer"  column="id_terminal">
+
+        </id>
+
+        <field name="heuretelecollecte" column="pheuretelecollecte" type="string" length="5" />
+
+        <one-to-one
+                field="tpe"
+                target-entity="GestionTransactionBundle\Entity\TPE"
+                inversed-by="terminal" >
+            <join-column name= "id_TPE" referenced-column-name= "id_TPE" />
+        </one-to-one>
+
+        <one-to-many
+                field="transactions"
+                target-entity="GestionTransactionBundle\Entity\Transaction"
+                mapped-by="terminal" />
+
+        <many-to-one
+        field="Station"
+        target-entity="GestionCarteBundle\Entity\Station"
+        inversed-by="terminals"
+        >
+
+        <join-column name="id_station" referenced-column-name="id_station" />
+    </many-to-one>
+
+    </entity>
+
+</doctrine-mapping>
